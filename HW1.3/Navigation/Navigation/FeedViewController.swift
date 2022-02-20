@@ -13,7 +13,22 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         title = "Лента новостей"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        // Do any additional setup after loading the view.
+        
+       let transitionButton = UIButton()
+        transitionButton.layer.cornerRadius = 12
+        transitionButton.setTitle("Переход на пост", for: .normal)
+        transitionButton.backgroundColor = .systemBlue
+        transitionButton.clipsToBounds = true
+    
+        transitionButton.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(transitionButton)
+        
+        NSLayoutConstraint.activate([
+            transitionButton.widthAnchor.constraint(equalToConstant: 300),
+            transitionButton.heightAnchor.constraint(equalToConstant: 50),
+            transitionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            transitionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
 

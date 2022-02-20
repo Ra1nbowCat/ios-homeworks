@@ -14,6 +14,8 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBlue
+        title = "Новая информация"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
 

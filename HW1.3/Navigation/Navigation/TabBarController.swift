@@ -11,6 +11,7 @@ class TabBarController: UITabBarController {
     
         override func viewDidLoad() {
             super.viewDidLoad()
+            
             let FirstViewController = FeedViewController()  // пятое задание
             let firstNavigationController = UINavigationController(rootViewController: FirstViewController)
             
@@ -33,7 +34,8 @@ class TabBarController: UITabBarController {
             firstNavigationController.tabBarItem.title = "Лента новостей"
             
             secondNavigationController.tabBarItem.image = UIImage(systemName: "list.dash")
-            secondNavigationController.tabBarItem.title = "Профиль пользователя"
+            secondNavigationController.tabBarItem.title = "Профиль"
+            
         }
 
     }

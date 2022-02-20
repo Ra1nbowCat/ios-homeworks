@@ -11,7 +11,8 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Лента новостей"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         // Do any additional setup after loading the view.
     }
     

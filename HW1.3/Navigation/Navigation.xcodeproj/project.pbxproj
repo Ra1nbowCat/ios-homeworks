@@ -10,9 +10,13 @@
 		001BDCD227C2720400502454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD127C2720400502454 /* AppDelegate.swift */; };
 		001BDCD427C2720400502454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD327C2720400502454 /* SceneDelegate.swift */; };
 		001BDCD627C2720400502454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD527C2720400502454 /* ViewController.swift */; };
-		001BDCD927C2720400502454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCD727C2720400502454 /* Main.storyboard */; };
 		001BDCDB27C2720400502454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCDA27C2720400502454 /* Assets.xcassets */; };
 		001BDCDE27C2720400502454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCDC27C2720400502454 /* LaunchScreen.storyboard */; };
+		001BDCE827C278F200502454 /* mario_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCE727C278F200502454 /* mario_logo.png */; };
+		001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCEB27C279FE00502454 /* FeedViewController.swift */; };
+		001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCED27C27A2800502454 /* ProfileViewController.swift */; };
+		00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00708B2F27C28E75007AD3B5 /* PostViewController.swift */; };
+		008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008232EA27C2A5C900413D26 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +24,14 @@
 		001BDCD127C2720400502454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001BDCD327C2720400502454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		001BDCD527C2720400502454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		001BDCD827C2720400502454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		001BDCDA27C2720400502454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001BDCDD27C2720400502454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001BDCDF27C2720400502454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		001BDCE727C278F200502454 /* mario_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario_logo.png; sourceTree = "<group>"; };
+		001BDCEB27C279FE00502454 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		001BDCED27C27A2800502454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		00708B2F27C28E75007AD3B5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		008232EA27C2A5C900413D26 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +67,14 @@
 				001BDCD127C2720400502454 /* AppDelegate.swift */,
 				001BDCD327C2720400502454 /* SceneDelegate.swift */,
 				001BDCD527C2720400502454 /* ViewController.swift */,
-				001BDCD727C2720400502454 /* Main.storyboard */,
 				001BDCDA27C2720400502454 /* Assets.xcassets */,
+				008232EA27C2A5C900413D26 /* TabBarController.swift */,
+				00708B2F27C28E75007AD3B5 /* PostViewController.swift */,
+				001BDCEB27C279FE00502454 /* FeedViewController.swift */,
+				001BDCED27C27A2800502454 /* ProfileViewController.swift */,
 				001BDCDC27C2720400502454 /* LaunchScreen.storyboard */,
 				001BDCDF27C2720400502454 /* Info.plist */,
+				001BDCE727C278F200502454 /* mario_logo.png */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -125,9 +137,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001BDCE827C278F200502454 /* mario_logo.png in Resources */,
 				001BDCDE27C2720400502454 /* LaunchScreen.storyboard in Resources */,
 				001BDCDB27C2720400502454 /* Assets.xcassets in Resources */,
-				001BDCD927C2720400502454 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */,
 				001BDCD627C2720400502454 /* ViewController.swift in Sources */,
 				001BDCD227C2720400502454 /* AppDelegate.swift in Sources */,
+				001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */,
+				008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */,
+				001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */,
 				001BDCD427C2720400502454 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +163,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		001BDCD727C2720400502454 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				001BDCD827C2720400502454 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		001BDCDC27C2720400502454 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -293,7 +301,6 @@
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +327,6 @@
 				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

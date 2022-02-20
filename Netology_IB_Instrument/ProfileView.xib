@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView" customModule="Netology_IB_Instrument" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfileView" customModule="Netology_IB_Instrument" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png" translatesAutoresizingMaskIntoConstraints="NO" id="0qa-dk-Sj5">
+                    <rect key="frame" x="20" y="52" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="Iww-kj-f0H"/>
+                        <constraint firstAttribute="width" constant="150" id="faH-sW-bPn"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Илья" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-hb-6cq">
+                    <rect key="frame" x="199" y="52" width="101" height="21"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31.07.1996" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qf-0J-E0O">
+                    <rect key="frame" x="199" y="117" width="101" height="21"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Н.Новгород" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erb-t1-YY1">
+                    <rect key="frame" x="199" y="181" width="101" height="21"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" systemColor="systemBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="STa-d1-dvf">
+                    <rect key="frame" x="20" y="228" width="280" height="225"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="225" id="d7V-ZF-nSs"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="STa-d1-dvf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="5eL-sy-79j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ckg-hb-6cq" secondAttribute="trailing" constant="20" id="AV9-1C-dyH"/>
+                <constraint firstItem="0qa-dk-Sj5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="52" id="E82-o0-ZpB"/>
+                <constraint firstItem="erb-t1-YY1" firstAttribute="leading" secondItem="0qa-dk-Sj5" secondAttribute="trailing" constant="29" id="FRz-NX-XCj"/>
+                <constraint firstItem="ckg-hb-6cq" firstAttribute="leading" secondItem="0qa-dk-Sj5" secondAttribute="trailing" constant="29" id="Fts-Bf-Grz"/>
+                <constraint firstItem="3Qf-0J-E0O" firstAttribute="top" secondItem="ckg-hb-6cq" secondAttribute="bottom" constant="44" id="HHh-jl-qNk"/>
+                <constraint firstItem="erb-t1-YY1" firstAttribute="top" secondItem="3Qf-0J-E0O" secondAttribute="bottom" constant="43" id="Qzc-rv-s6D"/>
+                <constraint firstItem="STa-d1-dvf" firstAttribute="top" secondItem="0qa-dk-Sj5" secondAttribute="bottom" constant="26" id="UmW-cg-rzn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="STa-d1-dvf" secondAttribute="trailing" constant="20" id="Ws9-BA-fCz"/>
+                <constraint firstItem="3Qf-0J-E0O" firstAttribute="leading" secondItem="0qa-dk-Sj5" secondAttribute="trailing" constant="29" id="dhU-sQ-tk8"/>
+                <constraint firstItem="STa-d1-dvf" firstAttribute="top" secondItem="erb-t1-YY1" secondAttribute="bottom" constant="26" id="dn6-DB-mhe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="erb-t1-YY1" secondAttribute="trailing" constant="20" id="evN-hd-vEF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3Qf-0J-E0O" secondAttribute="trailing" constant="20" id="jGf-Oe-EHt"/>
+                <constraint firstItem="0qa-dk-Sj5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="mzo-fe-hxU"/>
+                <constraint firstItem="ckg-hb-6cq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="52" id="xAA-mb-Qhf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cityLabel" destination="erb-t1-YY1" id="qmz-Ob-HoV"/>
+                <outlet property="dateLabel" destination="3Qf-0J-E0O" id="K39-V2-bFr"/>
+                <outlet property="descriptionText" destination="STa-d1-dvf" id="PuR-4g-Xrw"/>
+                <outlet property="mainImage" destination="0qa-dk-Sj5" id="AEx-Dp-gxU"/>
+                <outlet property="nameLabel" destination="ckg-hb-6cq" id="WIv-M1-Lwj"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="69.642857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png" width="900" height="1200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

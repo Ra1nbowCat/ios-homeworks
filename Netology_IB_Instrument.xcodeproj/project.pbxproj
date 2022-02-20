@@ -13,6 +13,11 @@
 		00E7D07727C010E200BB9215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7D07527C010E200BB9215 /* Main.storyboard */; };
 		00E7D07927C010E300BB9215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E7D07827C010E300BB9215 /* Assets.xcassets */; };
 		00E7D07C27C010E300BB9215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7D07A27C010E300BB9215 /* LaunchScreen.storyboard */; };
+		00E7D08427C0115400BB9215 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E7D08327C0115400BB9215 /* ProfileView.xib */; };
+		00E7D08627C0126E00BB9215 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7D08527C0126E00BB9215 /* ProfileView.swift */; };
+		00E7D08827C012E100BB9215 /* png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E7D08727C012E100BB9215 /* png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png */; };
+		00E7D08A27C0130E00BB9215 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E7D08927C0130E00BB9215 /* Profile.storyboard */; };
+		00E7D08C27C0132500BB9215 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7D08B27C0132500BB9215 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		00E7D07827C010E300BB9215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00E7D07B27C010E300BB9215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00E7D07D27C010E300BB9215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E7D08327C0115400BB9215 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		00E7D08527C0126E00BB9215 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		00E7D08727C012E100BB9215 /* png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png"; sourceTree = "<group>"; };
+		00E7D08927C0130E00BB9215 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		00E7D08B27C0132500BB9215 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				00E7D07827C010E300BB9215 /* Assets.xcassets */,
 				00E7D07A27C010E300BB9215 /* LaunchScreen.storyboard */,
 				00E7D07D27C010E300BB9215 /* Info.plist */,
+				00E7D08327C0115400BB9215 /* ProfileView.xib */,
+				00E7D08527C0126E00BB9215 /* ProfileView.swift */,
+				00E7D08727C012E100BB9215 /* png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png */,
+				00E7D08927C0130E00BB9215 /* Profile.storyboard */,
+				00E7D08B27C0132500BB9215 /* ProfileViewController.swift */,
 			);
 			path = Netology_IB_Instrument;
 			sourceTree = "<group>";
@@ -125,8 +140,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E7D08A27C0130E00BB9215 /* Profile.storyboard in Resources */,
+				00E7D08427C0115400BB9215 /* ProfileView.xib in Resources */,
 				00E7D07C27C010E300BB9215 /* LaunchScreen.storyboard in Resources */,
 				00E7D07927C010E300BB9215 /* Assets.xcassets in Resources */,
+				00E7D08827C012E100BB9215 /* png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png in Resources */,
 				00E7D07727C010E200BB9215 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E7D08627C0126E00BB9215 /* ProfileView.swift in Sources */,
 				00E7D07427C010E200BB9215 /* ViewController.swift in Sources */,
+				00E7D08C27C0132500BB9215 /* ProfileViewController.swift in Sources */,
 				00E7D07027C010E200BB9215 /* AppDelegate.swift in Sources */,
 				00E7D07227C010E200BB9215 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,7 +313,7 @@
 				INFOPLIST_FILE = Netology_IB_Instrument/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Profile;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +340,7 @@
 				INFOPLIST_FILE = Netology_IB_Instrument/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Profile;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

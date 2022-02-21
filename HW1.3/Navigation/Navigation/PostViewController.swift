@@ -11,12 +11,32 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    var closure: (() -> Void)? 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemBlue
-        title = "Новая информация"
+        self.view.backgroundColor = .systemCyan
+        self.navigationController?.navigationBar.tintColor = .darkText
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        var newButton = UIBarButtonItem(title: "Информация", style: .plain, target: self, action: #selector(transitionScreen))
+        navigationItem.rightBarButtonItem = newButton
+        navigationItem.backButtonTitle = "Назад"
     }
+    
+    @objc private func transitionScreen() {
+         let vc2 = InfoViewController()
+         vc2.closure = {
+             
+         }
+         //navigationController?.pushViewController(vc2, animated: true)
+        
+        let navigationController = UINavigationController(rootViewController: vc2)
+        navigationController.modalPresentationStyle = UIModalPresentationStyle.automatic
+        self.present(navigationController, animated: true, completion: nil)
+     }
+    
+    
+   
     
 
     /*

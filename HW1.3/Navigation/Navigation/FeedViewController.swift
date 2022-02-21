@@ -19,6 +19,7 @@ class FeedViewController: UIViewController {
         transitionButton.setTitle("Переход на пост", for: .normal)
         transitionButton.backgroundColor = .systemBlue
         transitionButton.clipsToBounds = true
+        transitionButton.addTarget(self, action: #selector(transitionScreen), for: .touchUpInside)
     
         transitionButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(transitionButton)
@@ -29,8 +30,26 @@ class FeedViewController: UIViewController {
             transitionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             transitionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+        
+        navigationItem.backButtonTitle = "Назад"
+    
     }
     
+    @objc private func transitionScreen(button: UINavigationItem) {
+         let vc = PostViewController()
+         vc.title = newPost.title
+         vc.closure = {
+             
+         }
+         self.navigationController?.pushViewController(vc, animated: true)
+     }
+    
+    // Седьмое задание (+ сверху в функцию добавил!)
+    struct Post {
+        var title:String
+    }
+    
+    var newPost =  Post(title: "Важная информация!")
 
     /*
     // MARK: - Navigation

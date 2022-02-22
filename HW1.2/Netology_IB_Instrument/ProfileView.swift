@@ -8,16 +8,17 @@
 import UIKit
 
 class ProfileView: UIView {
-
-    @IBOutlet var mainImage: UIImageView!
     
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var myDescriptionLabel: UITextView!
+    @IBOutlet var mainImageView: UIImageView!
     
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var myNameLabel: UILabel!
     
-    @IBOutlet var cityLabel: UILabel!
+    @IBOutlet var myDateLabel: UILabel!
     
-    @IBOutlet var descriptionText: UITextView!
+    @IBOutlet var myCityLabel: UILabel!
+    
+    
     
     override init(frame: CGRect) {
             super.init(frame: frame)
@@ -37,8 +38,9 @@ class ProfileView: UIView {
         }
         
         private func loadViewFromXib() -> UIView {
-            guard let view = Bundle.main.loadNibNamed("ProfileView", owner: nil, options: nil)?.first as? UIView else { return UIView() }
+            guard let view = Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)?.first as? UIView else { return UIView() }
             
             return view
         }
+    
 }

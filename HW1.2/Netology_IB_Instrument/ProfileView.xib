@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,42 +8,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView" customModule="Netology_IB_Instrument" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileView" customModule="Netology_IB_Instrument" customModuleProvider="target">
+            <connections>
+                <outlet property="mainImageView" destination="0qa-dk-Sj5" id="bnW-XX-Z6i"/>
+                <outlet property="myCityLabel" destination="erb-t1-YY1" id="N01-UQ-Epf"/>
+                <outlet property="myDateLabel" destination="3Qf-0J-E0O" id="jzs-JC-uw0"/>
+                <outlet property="myDescriptionLabel" destination="STa-d1-dvf" id="m4d-1Z-tyY"/>
+                <outlet property="myNameLabel" destination="ckg-hb-6cq" id="xVg-l7-jYv"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfileView" customModule="Netology_IB_Instrument" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="png-clipart-super-mario-bros-mario-kart-8-toad-mario-bros-game-angle.png" translatesAutoresizingMaskIntoConstraints="NO" id="0qa-dk-Sj5">
-                    <rect key="frame" x="20" y="96" width="150" height="150"/>
+                    <rect key="frame" x="64" y="52" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="Iww-kj-f0H"/>
                         <constraint firstAttribute="width" constant="150" id="faH-sW-bPn"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Илья" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-hb-6cq">
-                    <rect key="frame" x="199" y="96" width="195" height="21"/>
+                    <rect key="frame" x="243" y="52" width="107" height="21"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31.07.1996" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qf-0J-E0O">
-                    <rect key="frame" x="199" y="161" width="195" height="21"/>
+                    <rect key="frame" x="243" y="117" width="107" height="21"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Н.Новгород" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erb-t1-YY1">
-                    <rect key="frame" x="199" y="225" width="195" height="21"/>
+                    <rect key="frame" x="243" y="181" width="107" height="21"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemBackgroundColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="STa-d1-dvf">
-                    <rect key="frame" x="20" y="272" width="374" height="225"/>
+                    <rect key="frame" x="64" y="228" width="286" height="225"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="225" id="d7V-ZF-nSs"/>
@@ -74,13 +82,6 @@
                 <constraint firstItem="ckg-hb-6cq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="52" id="xAA-mb-Qhf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="cityLabel" destination="erb-t1-YY1" id="qmz-Ob-HoV"/>
-                <outlet property="dateLabel" destination="3Qf-0J-E0O" id="K39-V2-bFr"/>
-                <outlet property="descriptionText" destination="STa-d1-dvf" id="PuR-4g-Xrw"/>
-                <outlet property="mainImage" destination="0qa-dk-Sj5" id="AEx-Dp-gxU"/>
-                <outlet property="nameLabel" destination="ckg-hb-6cq" id="WIv-M1-Lwj"/>
-            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="69.642857142857139"/>
         </view>
     </objects>

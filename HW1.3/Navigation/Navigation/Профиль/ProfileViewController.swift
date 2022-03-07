@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         title = "Профиль"
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        // self.navigationController?.navigationBar.backgroundColor = .systemBlue
         self.navigationController?.navigationBar.isTranslucent = false
         self.view.backgroundColor = .lightGray
         
@@ -27,7 +26,6 @@ class ProfileViewController: UIViewController {
         
         // добавление как subview
         self.view.addSubview(vc)
-        
         // Do any additional setup after loading the view.
     }
     

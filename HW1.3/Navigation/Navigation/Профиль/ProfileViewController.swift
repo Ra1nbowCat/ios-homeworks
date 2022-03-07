@@ -11,9 +11,10 @@ class ProfileViewController: UIViewController {
     
     var vc = ProfileHeaderView()
     
-    override func viewWillLayoutSubviews() {
-        vc.frame = view.frame
-    }
+    // решил убрать этот шаг, так как логинее получилось, что сама вьюха серая, а на Хедер я уже добавляю элементы, которые переносятся сюда
+    /* override func viewWillLayoutSubviews() {
+       vc.frame = view.frame
+    } */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,9 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.view.backgroundColor = .lightGray
         
-        
-        
         // добавление как subview
         self.view.addSubview(vc)
-        // Do any additional setup after loading the view.
+        
     }
     
 

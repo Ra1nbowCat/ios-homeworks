@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         title = "Профиль"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.view.backgroundColor = .lightGray
         // Do any additional setup after loading the view.
     }
     

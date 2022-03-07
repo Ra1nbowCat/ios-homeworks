@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0014D0BE27D5D3B900886B58 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0014D0BD27D5D3B900886B58 /* ProfileHeaderView.swift */; };
 		001BDCD227C2720400502454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD127C2720400502454 /* AppDelegate.swift */; };
 		001BDCD427C2720400502454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD327C2720400502454 /* SceneDelegate.swift */; };
 		001BDCD627C2720400502454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD527C2720400502454 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0014D0BD27D5D3B900886B58 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		001BDCCE27C2720400502454 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		001BDCD127C2720400502454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		001BDCD327C2720400502454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				001BDCED27C27A2800502454 /* ProfileViewController.swift */,
+				0014D0BD27D5D3B900886B58 /* ProfileHeaderView.swift */,
 			);
 			path = "Профиль";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				001BDCD627C2720400502454 /* ViewController.swift in Sources */,
 				001BDCD227C2720400502454 /* AppDelegate.swift in Sources */,
 				001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */,
+				0014D0BE27D5D3B900886B58 /* ProfileHeaderView.swift in Sources */,
 				008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */,
 				001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */,
 				00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */,

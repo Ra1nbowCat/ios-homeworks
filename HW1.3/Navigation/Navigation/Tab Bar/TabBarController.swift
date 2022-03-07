@@ -21,9 +21,8 @@ class TabBarController: UITabBarController {
             viewControllers = [firstNavigationController, secondNavigationController]
             
             // Четвертый пункт
-            self.tabBar.backgroundColor = .systemBlue
-            self.tabBar.tintColor = UIColor.white
-            self.tabBar.isTranslucent = true
+            self.tabBar.tintColor = UIColor.systemBlue
+            self.tabBar.isTranslucent = false
             self.tabBar.unselectedItemTintColor = UIColor.darkText
             
             self.view.backgroundColor = .white

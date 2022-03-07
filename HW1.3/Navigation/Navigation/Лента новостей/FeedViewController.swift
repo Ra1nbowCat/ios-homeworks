@@ -11,8 +11,10 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .lightGray
+        self.navigationController?.navigationBar.isTranslucent = false
         title = "Лента новостей"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         
        let transitionButton = UIButton()
         transitionButton.layer.cornerRadius = 12

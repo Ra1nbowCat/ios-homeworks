@@ -17,7 +17,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemCyan
         self.navigationController?.navigationBar.tintColor = .darkText
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         var newButton = UIBarButtonItem(title: "Информация", style: .plain, target: self, action: #selector(transitionScreen))
         navigationItem.rightBarButtonItem = newButton
         navigationItem.backButtonTitle = "Назад"

@@ -10,38 +10,52 @@ import UIKit
 class ProfileHeaderView: UIView {
     
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addSubview(newImageView)
-        NSLayoutConstraint.activate([
-            newImageView.widthAnchor.constraint(equalToConstant: 150),
-            newImageView.heightAnchor.constraint(equalToConstant: 150),
-            newImageView.centerXAnchor.constraint(equalTo: self.leadingAnchor, constant: 91),
-            newImageView.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 91)
-            ])
-        self.addSubview(mainLabel)
-        NSLayoutConstraint.activate([
-            mainLabel.widthAnchor.constraint(equalToConstant: 150),
-            mainLabel.heightAnchor.constraint(equalToConstant: 18),
-            mainLabel.centerXAnchor.constraint(equalTo: self.leadingAnchor, constant: 185 + 75),
-            mainLabel.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 46)
-            ])
-        self.addSubview(statusLabel)
-        NSLayoutConstraint.activate([
-            statusLabel.widthAnchor.constraint(equalToConstant: 150),
-            statusLabel.heightAnchor.constraint(equalToConstant: 18),
-            statusLabel.centerXAnchor.constraint(equalTo: self.leadingAnchor, constant: 185 + 75),
-            statusLabel.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 137)
-            ])
         setupViews()
+        addConstraintsToView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Cannot find coder")
     }
     
-    func setupViews() {
+    func addConstraintsToView() {
+        NSLayoutConstraint.activate([
+            newImageView.widthAnchor.constraint(equalToConstant: 150),
+            newImageView.heightAnchor.constraint(equalToConstant: 150),
+            newImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            newImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16)
+            ])
         
+        NSLayoutConstraint.activate([
+            mainLabel.widthAnchor.constraint(equalToConstant: 150),
+            mainLabel.heightAnchor.constraint(equalToConstant: 18),
+            mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 27),
+            mainLabel.leadingAnchor.constraint(equalTo: newImageView.trailingAnchor, constant: 20)
+            ])
+        
+        NSLayoutConstraint.activate([
+            statusLabel.widthAnchor.constraint(equalToConstant: 150),
+            statusLabel.heightAnchor.constraint(equalToConstant: 18),
+            statusLabel.bottomAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: -18),
+            statusLabel.leadingAnchor.constraint(equalTo: newImageView.trailingAnchor, constant: 20)
+            ])
+        
+        NSLayoutConstraint.activate([
+            showStatusButton.heightAnchor.constraint(equalToConstant: 50),
+            showStatusButton.topAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: 16),
+            showStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            showStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            ])
+    }
+    
+    func setupViews() {
+        self.addSubview(newImageView)
+        self.addSubview(mainLabel)
+        self.addSubview(statusLabel)
+        self.addSubview(showStatusButton)
     }
     
     let contenView: UIView = {
@@ -83,4 +97,14 @@ class ProfileHeaderView: UIView {
         return secondLabel
     } ()
     
+    let showStatusButton: UIButton = {
+        var button = UIButton(type: .system)
+        button.layer.cornerRadius = 4
+        button.setTitle("Показать статус", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemBlue
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    } ()
 }

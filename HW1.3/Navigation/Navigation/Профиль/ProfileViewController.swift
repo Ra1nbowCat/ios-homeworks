@@ -16,15 +16,16 @@ class ProfileViewController: UIViewController {
        vc.frame = view.frame
     } */
 
+    override func loadView() {
+        view = vc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Профиль"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.isTranslucent = false
         self.view.backgroundColor = .lightGray
-        
-        // добавление как subview
-        self.view.addSubview(vc)
         
     }
     

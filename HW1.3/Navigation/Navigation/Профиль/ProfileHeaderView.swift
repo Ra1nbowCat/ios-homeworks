@@ -39,7 +39,7 @@ class ProfileHeaderView: UIView {
         NSLayoutConstraint.activate([
             statusLabel.widthAnchor.constraint(equalToConstant: 150),
             statusLabel.heightAnchor.constraint(equalToConstant: 18),
-            statusLabel.bottomAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: -18),
+            statusLabel.bottomAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: -38),
             statusLabel.leadingAnchor.constraint(equalTo: newImageView.trailingAnchor, constant: 20)
             ])
         
@@ -49,6 +49,13 @@ class ProfileHeaderView: UIView {
             showStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             showStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             ])
+        
+        NSLayoutConstraint.activate([
+            statusTextField.heightAnchor.constraint(equalToConstant: 40),
+            statusTextField.leadingAnchor.constraint(equalTo: newImageView.trailingAnchor, constant: 20),
+            statusTextField.bottomAnchor.constraint(equalTo: showStatusButton.topAnchor, constant: -10),
+            statusTextField.trailingAnchor.constraint(equalTo: showStatusButton.trailingAnchor, constant: 0)
+            ])
     }
     
     func setupViews() {
@@ -56,7 +63,13 @@ class ProfileHeaderView: UIView {
         self.addSubview(mainLabel)
         self.addSubview(statusLabel)
         self.addSubview(showStatusButton)
+        self.addSubview(statusTextField)
     }
+    
+    @IBAction func buttonPressed(sender: UIButton){
+        print(statusLabel.text ?? "No status, sorry :(")
+    }
+    
     
     let contenView: UIView = {
         let view = UIView(frame: CGRect())
@@ -111,6 +124,27 @@ class ProfileHeaderView: UIView {
         button.layer.shadowRadius = 4.0
         button.layer.masksToBounds = false
         button.layer.cornerRadius = 4.0
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
+    } ()
+    
+    let statusTextField: UITextField = {
+        var textField = UITextField()
+        // frame: CGRect(x: 50, y: 50, width: 100, height: 40)
+        textField.placeholder = "Enter text here"
+        textField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        textField.textColor = .black
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 12
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.keyboardType = UIKeyboardType.default
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.clearButtonMode = UITextField.ViewMode.whileEditing
+        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        // textField.delegate = self
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     } ()
 }

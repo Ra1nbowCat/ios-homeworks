@@ -105,6 +105,12 @@ class ProfileHeaderView: UIView {
         button.backgroundColor = .systemBlue
         button.clipsToBounds = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
+        button.layer.shadowOpacity = 0.7
+        button.layer.shadowRadius = 4.0
+        button.layer.masksToBounds = false
+        button.layer.cornerRadius = 4.0
         return button
     } ()
 }

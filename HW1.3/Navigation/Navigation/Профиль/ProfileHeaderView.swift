@@ -67,9 +67,15 @@ class ProfileHeaderView: UIView {
     }
     
     @IBAction func buttonPressed(sender: UIButton){
+        statusLabel.text = statusText
         print(statusLabel.text ?? "No status, sorry :(")
     }
     
+    private var statusText: String = ""
+    
+    @objc func statusTextChanged(_ textField: UITextField) {
+        statusText = statusTextField.text!
+    }
     
     let contenView: UIView = {
         let view = UIView(frame: CGRect())
@@ -113,7 +119,7 @@ class ProfileHeaderView: UIView {
     let showStatusButton: UIButton = {
         var button = UIButton(type: .system)
         button.layer.cornerRadius = 4
-        button.setTitle("Показать статус", for: .normal)
+        button.setTitle("Задать статус", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
         button.clipsToBounds = true
@@ -130,7 +136,6 @@ class ProfileHeaderView: UIView {
     
     let statusTextField: UITextField = {
         var textField = UITextField()
-        // frame: CGRect(x: 50, y: 50, width: 100, height: 40)
         textField.placeholder = "Enter text here"
         textField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         textField.textColor = .black
@@ -143,7 +148,7 @@ class ProfileHeaderView: UIView {
         textField.returnKeyType = UIReturnKeyType.done
         textField.clearButtonMode = UITextField.ViewMode.whileEditing
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        // textField.delegate = self
+        textField.addTarget(self, action: #selector(statusTextChanged(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     } ()

@@ -16,25 +16,53 @@ class FeedViewController: UIViewController {
         title = "Лента новостей"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
-       let transitionButton = UIButton()
+        self.view.addSubview(buttonStackView)
+        buttonStackView.addArrangedSubview(transitionButton)
+        buttonStackView.addArrangedSubview(secondTransitionButton)
+        addConstraintsToStackView()
+        
+        navigationItem.backButtonTitle = "Назад"
+    
+    }
+    
+    let transitionButton: UIButton = {
+        let transitionButton = UIButton()
         transitionButton.layer.cornerRadius = 12
         transitionButton.setTitle("Переход на пост", for: .normal)
         transitionButton.backgroundColor = .systemBlue
         transitionButton.clipsToBounds = true
         transitionButton.addTarget(self, action: #selector(transitionScreen), for: .touchUpInside)
-    
         transitionButton.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(transitionButton)
-        
-        NSLayoutConstraint.activate([
-            transitionButton.widthAnchor.constraint(equalToConstant: 300),
-            transitionButton.heightAnchor.constraint(equalToConstant: 50),
-            transitionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            transitionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
-        navigationItem.backButtonTitle = "Назад"
+        return transitionButton
+    } ()
     
+    let secondTransitionButton: UIButton = {
+        let transitionButton = UIButton()
+        transitionButton.layer.cornerRadius = 12
+        transitionButton.setTitle("Второй переход", for: .normal)
+        transitionButton.backgroundColor = .systemBlue
+        transitionButton.clipsToBounds = true
+        transitionButton.addTarget(self, action: #selector(transitionScreen), for: .touchUpInside)
+        transitionButton.translatesAutoresizingMaskIntoConstraints = false
+        return transitionButton
+    } ()
+    
+    let buttonStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        return stackView
+    } ()
+    
+    func addConstraintsToStackView() {
+        NSLayoutConstraint.activate([
+            buttonStackView.heightAnchor.constraint(equalToConstant: 110),
+            buttonStackView.widthAnchor.constraint(equalToConstant: 300),
+            buttonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            buttonStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     @objc private func transitionScreen(button: UINavigationItem) {

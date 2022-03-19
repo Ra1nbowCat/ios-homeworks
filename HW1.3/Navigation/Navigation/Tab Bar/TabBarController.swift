@@ -12,10 +12,10 @@ class TabBarController: UITabBarController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            let FirstViewController = FeedViewController()  // пятое задание
+            let FirstViewController = FeedViewController()
             let firstNavigationController = UINavigationController(rootViewController: FirstViewController)
             
-            let SecondViewController = ProfileViewController()   // пятое задание
+            let SecondViewController = LogInViewController()
             let secondNavigationController = UINavigationController(rootViewController: SecondViewController)
             
             viewControllers = [firstNavigationController, secondNavigationController]
@@ -24,6 +24,7 @@ class TabBarController: UITabBarController {
             self.tabBar.tintColor = UIColor.systemBlue
             self.tabBar.isTranslucent = false
             self.tabBar.unselectedItemTintColor = UIColor.darkText
+            secondNavigationController.navigationBar.isHidden = true
             
             self.view.backgroundColor = .white
             

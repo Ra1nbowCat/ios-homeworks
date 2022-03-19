@@ -13,10 +13,32 @@ class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
+        addElements()
+        addConstraints()
     }
     
+    let LogoImageView: UIImageView = {
+        var imageView : UIImageView
+        imageView  = UIImageView(frame: CGRect(x: 16, y: 16, width: 150, height: 150))
+           imageView.image = UIImage(named:"logo")
+        // imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    } ()
     
+    func addElements() {
+        view.addSubview(LogoImageView)
+    }
+    
+    func addConstraints() {
+        NSLayoutConstraint.activate([
+            LogoImageView.heightAnchor.constraint(equalToConstant: 100),
+            LogoImageView.widthAnchor.constraint(equalToConstant: 100),
+            LogoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            LogoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120)
+            ])
+    }
     
 
     /*

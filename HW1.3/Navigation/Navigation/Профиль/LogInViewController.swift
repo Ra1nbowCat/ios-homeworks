@@ -21,11 +21,25 @@ class LogInViewController: UIViewController {
     let LogoImageView: UIImageView = {
         var imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 16, y: 16, width: 150, height: 150))
-           imageView.image = UIImage(named:"logo")
-        // imageView.clipsToBounds = true
+        imageView.image = UIImage(named:"logo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     } ()
+    
+    let LogoTextField: UITextField = {
+        var textField = UITextField(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        textField.placeholder = "Email or phone"
+        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        textField.textColor = .black
+        textField.autocapitalizationType = .none
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.black.cgColor
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 12
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    } ()
+    
     
     func addElements() {
         view.addSubview(LogoImageView)

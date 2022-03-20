@@ -15,10 +15,21 @@ class ProfileHeaderView: UIView {
         super.init(frame: frame)
         setupViews()
         addConstraintsToView()
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: 50))
+        let flexibleSpase = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done , target: self, action: #selector(didTapDone))
+        toolBar.items = [flexibleSpase, doneButton]
+        toolBar.sizeToFit()
+        statusTextField.inputAccessoryView = toolBar
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Cannot find coder")
+    }
+    
+    @objc func didTapDone() {
+        statusTextField.resignFirstResponder()
     }
     
     func addConstraintsToView() {

@@ -16,6 +16,19 @@ class LogInViewController: UIViewController {
         view.backgroundColor = .white
         addElements()
         addConstraints()
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let flexibleSpase = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done , target: self, action: #selector(didTapDone))
+        toolBar.items = [flexibleSpase, doneButton]
+        toolBar.sizeToFit()
+        FirstLogoTextField.inputAccessoryView = toolBar
+        SecondLogoTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func didTapDone() {
+        FirstLogoTextField.resignFirstResponder()
+        SecondLogoTextField.resignFirstResponder()
     }
     
     let LogoImageView: UIImageView = {

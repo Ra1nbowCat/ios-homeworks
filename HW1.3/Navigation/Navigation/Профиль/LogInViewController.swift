@@ -64,12 +64,28 @@ class LogInViewController: UIViewController {
         return stackView
     } ()
     
+    let LogInButton: UIButton = {
+        var button = UIButton(type: .system)
+        button.layer.cornerRadius = 10
+        button.setTitle("Log in", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(named: "blue_pixel")
+        button.setBackgroundImage(image, for: UIControl.State.normal)
+        if button.isSelected || button.isHighlighted {
+            button.alpha = 0.8
+        }
+        return button
+    } ()
+    
     
     func addElements() {
         view.addSubview(LogoImageView)
         TextFieldsStackView.addArrangedSubview(FirstLogoTextField)
         TextFieldsStackView.addArrangedSubview(SecondLogoTextField)
         view.addSubview(TextFieldsStackView)
+        view.addSubview(LogInButton)
     }
     
     func addConstraints() {
@@ -85,6 +101,13 @@ class LogInViewController: UIViewController {
             TextFieldsStackView.topAnchor.constraint(equalTo: LogoImageView.bottomAnchor, constant: 120),
             TextFieldsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             TextFieldsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            ])
+        
+        NSLayoutConstraint.activate([
+            LogInButton.heightAnchor.constraint(equalToConstant: 50),
+            LogInButton.topAnchor.constraint(equalTo: TextFieldsStackView.bottomAnchor, constant: 16),
+            LogInButton.trailingAnchor.constraint(equalTo: TextFieldsStackView.trailingAnchor),
+            LogInButton.leadingAnchor.constraint(equalTo: TextFieldsStackView.leadingAnchor)
             ])
     }
     

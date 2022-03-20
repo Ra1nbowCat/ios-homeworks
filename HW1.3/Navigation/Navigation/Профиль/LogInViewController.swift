@@ -35,6 +35,7 @@ class LogInViewController: UIViewController {
         textField.autocapitalizationType = .none
         textField.layer.borderWidth = 0.5
         textField.layer.cornerRadius = 10
+        textField.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.borderColor = UIColor.lightGray.cgColor
         return textField
@@ -49,6 +50,7 @@ class LogInViewController: UIViewController {
         textField.autocapitalizationType = .none
         textField.layer.borderWidth = 0.5
         textField.layer.cornerRadius = 10
+        textField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.layer.borderColor = UIColor.lightGray.cgColor
         return textField

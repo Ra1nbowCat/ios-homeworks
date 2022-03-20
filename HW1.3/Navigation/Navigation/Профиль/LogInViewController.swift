@@ -26,23 +26,48 @@ class LogInViewController: UIViewController {
         return imageView
     } ()
     
-    let LogoTextField: UITextField = {
-        var textField = UITextField(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+    let FirstLogoTextField: UITextField = {
+        var textField = UITextField()
         textField.placeholder = "Email or phone"
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         textField.textColor = .black
+        textField.backgroundColor = .systemGray6
         textField.autocapitalizationType = .none
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.backgroundColor = .white
-        textField.layer.cornerRadius = 12
+        textField.layer.borderWidth = 0.5
+        textField.layer.cornerRadius = 10
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.borderColor = UIColor.lightGray.cgColor
         return textField
+    } ()
+    
+    let SecondLogoTextField: UITextField = {
+        var textField = UITextField()
+        textField.placeholder = "Password"
+        textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        textField.textColor = .black
+        textField.backgroundColor = .systemGray6
+        textField.autocapitalizationType = .none
+        textField.layer.borderWidth = 0.5
+        textField.layer.cornerRadius = 10
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        return textField
+    } ()
+    
+    let TextFieldsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        return stackView
     } ()
     
     
     func addElements() {
         view.addSubview(LogoImageView)
+        TextFieldsStackView.addArrangedSubview(FirstLogoTextField)
+        TextFieldsStackView.addArrangedSubview(SecondLogoTextField)
+        view.addSubview(TextFieldsStackView)
     }
     
     func addConstraints() {
@@ -51,6 +76,13 @@ class LogInViewController: UIViewController {
             LogoImageView.widthAnchor.constraint(equalToConstant: 100),
             LogoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             LogoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120)
+            ])
+        
+        NSLayoutConstraint.activate([
+            TextFieldsStackView.heightAnchor.constraint(equalToConstant: 100),
+            TextFieldsStackView.topAnchor.constraint(equalTo: LogoImageView.bottomAnchor, constant: 120),
+            TextFieldsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            TextFieldsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
             ])
     }
     

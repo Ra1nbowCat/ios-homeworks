@@ -11,6 +11,7 @@ class ProfileViewController: UIViewController {
     
     var vc = ProfileHeaderView()
     private let posts = PostAPI.getPost()
+    let postTableView = UITableView()
     
     func activateConstraintsForView() {
         vc.translatesAutoresizingMaskIntoConstraints = false
@@ -22,14 +23,27 @@ class ProfileViewController: UIViewController {
             ])
     }
     
+    func activateConstraintsForTableView() {
+        NSLayoutConstraint.activate([
+            postTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            postTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            postTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            postTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         view.addSubview(vc)
         activateConstraintsForView()
         title = "Профиль"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.isTranslucent = false
-        self.view.backgroundColor = .systemGray4
+        self.view.backgroundColor = .systemGray4 */
         
+        view.addSubview(postTableView)
+        postTableView.translatesAutoresizingMaskIntoConstraints = false
+        activateConstraintsForTableView()
     }
 }

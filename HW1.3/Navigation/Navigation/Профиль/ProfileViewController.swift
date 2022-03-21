@@ -13,8 +13,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /* let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-          cell.textLabel?.text = posts[indexPath.row].description */
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.post = posts[indexPath.row]
           return cell
@@ -30,7 +28,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 500
+       return 550
     }
     
     
@@ -63,7 +61,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         postTableView.dataSource = self
         postTableView.delegate = self
         
-        //postTableView.register(UITableViewCell.self, forCellReuseIdentifier: "postCell")
         postTableView.register(PostTableViewCell.self, forCellReuseIdentifier: "postCell")
     }
 }

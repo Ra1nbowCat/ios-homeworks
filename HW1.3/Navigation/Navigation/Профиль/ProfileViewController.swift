@@ -7,7 +7,17 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
+          cell.textLabel?.text = posts[indexPath.row].description
+          return cell
+    }
+    
     
     var vc = ProfileHeaderView()
     private let posts = PostAPI.getPost()
@@ -23,15 +33,6 @@ class ProfileViewController: UIViewController {
             ])
     }
     
-    func activateConstraintsForTableView() {
-        NSLayoutConstraint.activate([
-            postTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            postTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            postTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            postTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -44,6 +45,15 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(postTableView)
         postTableView.translatesAutoresizingMaskIntoConstraints = false
-        activateConstraintsForTableView()
+        
+        postTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
+        postTableView.leftAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        postTableView.rightAnchor.constraint(equalTo:view.safeAreaLayoutGuide.rightAnchor).isActive = true
+        postTableView.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        postTableView.dataSource = self
+        postTableView.delegate = self
+        
+        postTableView.register(UITableViewCell.self, forCellReuseIdentifier: "postCell")
     }
 }

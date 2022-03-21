@@ -18,6 +18,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
           return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = vc
+            return headerView
+        }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 250    // вот здесь я хотел сделать не число, а прибить к vc.frame.height. Но почему-то у меня это значение оказывалось равно 0. Если не сложно, объясните этот момент в комментарии, пожалуйста.
+        }
+    
+    
     
     var vc = ProfileHeaderView()
     private let posts = PostAPI.getPost()

@@ -10,6 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     var vc = ProfileHeaderView()
+    private let posts = PostAPI.getPost()
     
     func activateConstraintsForView() {
         vc.translatesAutoresizingMaskIntoConstraints = false

@@ -17,6 +17,8 @@
 		001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCEB27C279FE00502454 /* FeedViewController.swift */; };
 		001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCED27C27A2800502454 /* ProfileViewController.swift */; };
 		00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00553C2A27C383B300C1D9EC /* InfoViewController.swift */; };
+		006DFE3427E88EA5003E2983 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DFE3327E88EA5003E2983 /* Post.swift */; };
+		006DFE3627E88F17003E2983 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DFE3527E88F17003E2983 /* PostAPI.swift */; };
 		00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00708B2F27C28E75007AD3B5 /* PostViewController.swift */; };
 		0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077C12027E5D80200FA1954 /* LogInViewController.swift */; };
 		008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008232EA27C2A5C900413D26 /* TabBarController.swift */; };
@@ -35,6 +37,8 @@
 		001BDCEB27C279FE00502454 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		001BDCED27C27A2800502454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		00553C2A27C383B300C1D9EC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		006DFE3327E88EA5003E2983 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		006DFE3527E88F17003E2983 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		00708B2F27C28E75007AD3B5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0077C12027E5D80200FA1954 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		008232EA27C2A5C900413D26 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				001BDCED27C27A2800502454 /* ProfileViewController.swift */,
 				0014D0BD27D5D3B900886B58 /* ProfileHeaderView.swift */,
 				0077C12027E5D80200FA1954 /* LogInViewController.swift */,
+				006DFE3327E88EA5003E2983 /* Post.swift */,
+				006DFE3527E88F17003E2983 /* PostAPI.swift */,
 			);
 			path = "Профиль";
 			sourceTree = "<group>";
@@ -185,12 +191,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */,
+				006DFE3427E88EA5003E2983 /* Post.swift in Sources */,
 				001BDCD627C2720400502454 /* ViewController.swift in Sources */,
 				001BDCD227C2720400502454 /* AppDelegate.swift in Sources */,
 				001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */,
 				0014D0BE27D5D3B900886B58 /* ProfileHeaderView.swift in Sources */,
 				008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */,
 				001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */,
+				006DFE3627E88F17003E2983 /* PostAPI.swift in Sources */,
 				00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */,
 				0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */,
 				001BDCD427C2720400502454 /* SceneDelegate.swift in Sources */,

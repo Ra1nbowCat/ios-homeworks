@@ -113,7 +113,7 @@ class LogInViewController: UIViewController {
         if button.isSelected || button.isHighlighted {
             button.alpha = 0.8
         }
-        button.addTarget(self, action: #selector(checkIfFilled), for: .touchUpInside)
+        button.addTarget(self, action: #selector(transitionScreen), for: .touchUpInside)
         return button
     } ()
     
@@ -178,13 +178,6 @@ class LogInViewController: UIViewController {
          let vc = ProfileViewController()
          self.navigationController?.pushViewController(vc, animated: true)
      }
-    
-    @objc func checkIfFilled() {
-        if let _text = FirstLogoTextField.text, _text.isEmpty, let _text = SecondLogoTextField.text, _text.isEmpty{
-            // _text is not empty here
-            LogInButton.addTarget(self, action: #selector(transitionScreen), for: .touchUpInside)
-        }
-    }
 }
 
 

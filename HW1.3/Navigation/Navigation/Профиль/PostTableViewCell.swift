@@ -9,28 +9,6 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.contentView.addSubview(postImageView)
-        self.contentView.addSubview(authorLabel)
-        //self.contentView.addSubview(descriptionLabel)
-        
-        //self.contentView.addSubview(containerView)
-        
-        authorLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        authorLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-        authorLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
-        
-        //postImageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
-        //postImageView.widthAnchor.constraint(equalToConstant: 400).isActive = true
-        postImageView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor).isActive = true
-        postImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
-        postImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
-     }
-
-     required init?(coder aDecoder: NSCoder) {
-       super.init(coder: aDecoder)
-    }
     
     var post:Post? {
         didSet {
@@ -42,14 +20,17 @@ class PostTableViewCell: UITableViewCell {
             if let name = postItem.image {
                 postImageView.image = UIImage(named: name)
             }
+            
+            if let description = postItem.description {
+                descriptionLabel.text = " Comment: \(description) "
+            }
         }
     }
     
     let postImageView:UIImageView = {
              let img = UIImageView()
-             img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
-             img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
-             img.layer.cornerRadius = 35
+             img.contentMode = .scaleAspectFill 
+             img.translatesAutoresizingMaskIntoConstraints = false
              img.clipsToBounds = true
             return img
          }()
@@ -58,22 +39,39 @@ class PostTableViewCell: UITableViewCell {
             let label = UILabel()
             label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
+            label.font = UIFont.boldSystemFont(ofSize: 18.0)
             return label
     }()
     
     let descriptionLabel:UILabel = {
             let label = UILabel()
             label.font = UIFont.boldSystemFont(ofSize: 20)
-            label.textColor = .systemGray
+            label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
             return label
     }()
     
-    let containerView:UIView = {
-      let view = UIView()
-      view.translatesAutoresizingMaskIntoConstraints = false
-      view.clipsToBounds = true
-      return view
-    }()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.addSubview(postImageView)
+        self.contentView.addSubview(authorLabel)
+        self.contentView.addSubview(descriptionLabel)
+        
+        authorLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
+        authorLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
+        authorLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor).isActive = true
+        
+        postImageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        postImageView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 15).isActive = true
+        postImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10).isActive = true
+        postImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10).isActive = true
+        
+        descriptionLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 15).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor).isActive = true
+     }
+
+     required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
 
 }

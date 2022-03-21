@@ -26,8 +26,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 250    // вот здесь я хотел сделать не число, а прибить к vc.frame.height. Но почему-то у меня это значение оказывалось равно 0. Если не сложно, объясните этот момент в комментарии, пожалуйста.
-        }
+        return 250
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 500
+    }
     
     
     
@@ -47,16 +51,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        view.addSubview(vc)
-        activateConstraintsForView()
-        title = "Профиль"
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.view.backgroundColor = .systemGray4 */
-        
         view.addSubview(postTableView)
         postTableView.translatesAutoresizingMaskIntoConstraints = false
+        vc.backgroundColor = .white
         
         postTableView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
         postTableView.leftAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leftAnchor).isActive = true

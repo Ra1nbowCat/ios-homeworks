@@ -23,35 +23,29 @@ class LogInViewController: UIViewController {
         toolBar.sizeToFit()
         FirstLogoTextField.inputAccessoryView = toolBar
         SecondLogoTextField.inputAccessoryView = toolBar
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        FirstLogoTextField.resignFirstResponder()
+        SecondLogoTextField.resignFirstResponder()
     }
-
-    var isExpand: Bool = false
     
-    @objc func keyboardWillAppear() {
-        //Do something here
-        if !isExpand {
-            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height + 150)
-            isExpand = true
+    @objc func keyboardWillShow(notification:NSNotification) {
+        guard let keyboardFrameValue = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
         }
+        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.5)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameValue.height, right: 0)
     }
 
-    @objc func keyboardWillDisappear() {
-        //Do something here
-        if isExpand {
-            self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.scrollView.frame.height - 150)
-            isExpand = false
-        }
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+    @objc func keyboardWillHide(notification:NSNotification) {
+        scrollView.contentOffset = CGPoint.zero
     }
     
     let LogoImageView: UIImageView = {

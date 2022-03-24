@@ -40,7 +40,7 @@ class LogInViewController: UIViewController {
         guard let keyboardFrameValue = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.5)
+        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.3)
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameValue.height, right: 0)
     }
 
@@ -145,14 +145,15 @@ class LogInViewController: UIViewController {
             LogoImageView.heightAnchor.constraint(equalToConstant: 100),
             LogoImageView.widthAnchor.constraint(equalToConstant: 100),
             LogoImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            LogoImageView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 120)
+            LogoImageView.bottomAnchor.constraint(equalTo: TextFieldsStackView.topAnchor, constant: -120)
             ])
         
         NSLayoutConstraint.activate([
             TextFieldsStackView.heightAnchor.constraint(equalToConstant: 100),
-            TextFieldsStackView.topAnchor.constraint(equalTo: LogoImageView.bottomAnchor, constant: 120),
             TextFieldsStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            TextFieldsStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16)
+            TextFieldsStackView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            TextFieldsStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            TextFieldsStackView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
             ])
         
         NSLayoutConstraint.activate([

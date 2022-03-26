@@ -15,6 +15,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotosTableViewCell
+            
+            cell.firstPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
+            cell.secondPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
+            cell.thirdPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
+            cell.fourthPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell

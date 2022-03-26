@@ -8,11 +8,15 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotosTableViewCell
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.post = posts[indexPath.row]
           return cell
@@ -62,5 +66,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         postTableView.delegate = self
         
         postTableView.register(PostTableViewCell.self, forCellReuseIdentifier: "postCell")
+        postTableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: "photoCell")
     }
 }

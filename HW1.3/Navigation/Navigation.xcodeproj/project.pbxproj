@@ -24,6 +24,7 @@
 		00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00708B2F27C28E75007AD3B5 /* PostViewController.swift */; };
 		0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077C12027E5D80200FA1954 /* LogInViewController.swift */; };
 		008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008232EA27C2A5C900413D26 /* TabBarController.swift */; };
+		00AC624A27F0828000373CFB /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC624927F0828000373CFB /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		00708B2F27C28E75007AD3B5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0077C12027E5D80200FA1954 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		008232EA27C2A5C900413D26 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		00AC624927F0828000373CFB /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				006DFE3527E88F17003E2983 /* PostAPI.swift */,
 				006DFE3727E8A135003E2983 /* PostTableViewCell.swift */,
 				0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */,
+				00AC624927F0828000373CFB /* PhotosViewController.swift */,
 			);
 			path = "Профиль";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				0014D0BE27D5D3B900886B58 /* ProfileHeaderView.swift in Sources */,
 				008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */,
 				0043007027EE281500174AE7 /* PhotosTableViewCell.swift in Sources */,
+				00AC624A27F0828000373CFB /* PhotosViewController.swift in Sources */,
 				001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */,
 				006DFE3627E88F17003E2983 /* PostAPI.swift in Sources */,
 				00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */,

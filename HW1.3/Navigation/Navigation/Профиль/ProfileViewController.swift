@@ -13,9 +13,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return posts.count
     }
     
+    @objc func whichButtonPressed(sender: UIButton) {
+        self.navigationController?.pushViewController(PhotosViewController(), animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotosTableViewCell
+            
+            cell.PhotoButton.addTarget(self, action: #selector(whichButtonPressed(sender:)), for: .touchUpInside)
             
             cell.firstPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
             cell.secondPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true

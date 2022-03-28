@@ -110,7 +110,7 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func itemWidth(for width: CGFloat, spacing: CGFloat) -> CGFloat {
-        let itemsInRow: CGFloat = 2
+        let itemsInRow: CGFloat = 3
 
         let totalSpacing: CGFloat = 2 * spacing + (itemsInRow - 1) * spacing
         let finalWidth = (width - totalSpacing) / itemsInRow

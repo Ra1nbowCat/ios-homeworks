@@ -20,7 +20,7 @@ final class PhotoCell: UICollectionViewCell {
 
     private let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
 

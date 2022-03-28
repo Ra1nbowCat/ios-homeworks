@@ -27,7 +27,7 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         title = "Photo gallery"
         
-        var newButton = UIBarButtonItem(title: "Спрятать", style: .plain, target: self, action: #selector(transitionScreenPop))
+        let newButton = UIBarButtonItem(title: "Hide", style: .plain, target: self, action: #selector(transitionScreenPop))
         navigationItem.leftBarButtonItem = newButton
         
         setupViews()

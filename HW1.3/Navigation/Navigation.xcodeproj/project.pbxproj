@@ -18,6 +18,7 @@
 		001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCED27C27A2800502454 /* ProfileViewController.swift */; };
 		003C186727F18B5B005FD7D9 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C186627F18B5B005FD7D9 /* PhotoCollectionViewCell.swift */; };
 		003C186927F18C55005FD7D9 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C186827F18C55005FD7D9 /* Photos.swift */; };
+		003C186A27F1A210005FD7D9 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC624927F0828000373CFB /* PhotosViewController.swift */; };
 		0043007027EE281500174AE7 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */; };
 		00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00553C2A27C383B300C1D9EC /* InfoViewController.swift */; };
 		006DFE3427E88EA5003E2983 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DFE3327E88EA5003E2983 /* Post.swift */; };
@@ -26,7 +27,6 @@
 		00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00708B2F27C28E75007AD3B5 /* PostViewController.swift */; };
 		0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077C12027E5D80200FA1954 /* LogInViewController.swift */; };
 		008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008232EA27C2A5C900413D26 /* TabBarController.swift */; };
-		00AC624A27F0828000373CFB /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AC624927F0828000373CFB /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */,
+				003C186A27F1A210005FD7D9 /* PhotosViewController.swift in Sources */,
 				006DFE3427E88EA5003E2983 /* Post.swift in Sources */,
 				006DFE3827E8A135003E2983 /* PostTableViewCell.swift in Sources */,
 				001BDCD627C2720400502454 /* ViewController.swift in Sources */,
@@ -231,7 +232,6 @@
 				008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */,
 				0043007027EE281500174AE7 /* PhotosTableViewCell.swift in Sources */,
 				003C186727F18B5B005FD7D9 /* PhotoCollectionViewCell.swift in Sources */,
-				00AC624A27F0828000373CFB /* PhotosViewController.swift in Sources */,
 				001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */,
 				003C186927F18C55005FD7D9 /* Photos.swift in Sources */,
 				006DFE3627E88F17003E2983 /* PostAPI.swift in Sources */,

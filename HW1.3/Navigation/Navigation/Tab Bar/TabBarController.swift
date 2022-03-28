@@ -37,7 +37,6 @@ class TabBarController: UITabBarController {
             
             secondNavigationController.tabBarItem.image = UIImage(systemName: "list.dash")
             secondNavigationController.tabBarItem.title = "Профиль"
-            
         }
 
     }

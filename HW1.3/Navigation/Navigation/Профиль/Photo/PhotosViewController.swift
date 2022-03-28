@@ -25,6 +25,7 @@ class PhotosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Photo Gallery"
         setupViews()
         setupLayouts()
         populatePhotos()

@@ -14,7 +14,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func whichButtonPressed(sender: UIButton) {
-        self.navigationController?.pushViewController(PhotosViewController(), animated: true)
+        let navVC = UINavigationController(rootViewController: PhotosViewController())
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

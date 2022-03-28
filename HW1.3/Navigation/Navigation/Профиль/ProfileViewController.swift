@@ -13,11 +13,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         return posts.count
     }
     
+    public let navVC = UINavigationController(rootViewController: PhotosViewController())
+    
     @objc func whichButtonPressed(sender: UIButton) {
-        let navVC = UINavigationController(rootViewController: PhotosViewController())
         navVC.modalPresentationStyle = .fullScreen
         self.present(navVC, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

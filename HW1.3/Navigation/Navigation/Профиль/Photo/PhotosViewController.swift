@@ -25,13 +25,21 @@ class PhotosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Photo Gallery"
+        title = "Photo gallery"
+        
+        var newButton = UIBarButtonItem(title: "Спрятать", style: .plain, target: self, action: #selector(transitionScreenPop))
+        navigationItem.leftBarButtonItem = newButton
+        
         setupViews()
         setupLayouts()
         populatePhotos()
         collectionView.reloadData()
     }
-
+    
+    @objc func transitionScreenPop() {
+        self.navigationController?.dismiss(animated: true)
+     }
+    
     private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(collectionView)

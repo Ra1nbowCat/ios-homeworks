@@ -16,6 +16,8 @@
 		001BDCE827C278F200502454 /* mario_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCE727C278F200502454 /* mario_logo.png */; };
 		001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCEB27C279FE00502454 /* FeedViewController.swift */; };
 		001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCED27C27A2800502454 /* ProfileViewController.swift */; };
+		003C186727F18B5B005FD7D9 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C186627F18B5B005FD7D9 /* PhotoCollectionViewCell.swift */; };
+		003C186927F18C55005FD7D9 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C186827F18C55005FD7D9 /* Photos.swift */; };
 		0043007027EE281500174AE7 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */; };
 		00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00553C2A27C383B300C1D9EC /* InfoViewController.swift */; };
 		006DFE3427E88EA5003E2983 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DFE3327E88EA5003E2983 /* Post.swift */; };
@@ -39,6 +41,8 @@
 		001BDCE727C278F200502454 /* mario_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario_logo.png; sourceTree = "<group>"; };
 		001BDCEB27C279FE00502454 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		001BDCED27C27A2800502454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		003C186627F18B5B005FD7D9 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		003C186827F18C55005FD7D9 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		00553C2A27C383B300C1D9EC /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		006DFE3327E88EA5003E2983 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -86,11 +90,8 @@
 				001BDCED27C27A2800502454 /* ProfileViewController.swift */,
 				0014D0BD27D5D3B900886B58 /* ProfileHeaderView.swift */,
 				0077C12027E5D80200FA1954 /* LogInViewController.swift */,
-				006DFE3327E88EA5003E2983 /* Post.swift */,
-				006DFE3527E88F17003E2983 /* PostAPI.swift */,
-				006DFE3727E8A135003E2983 /* PostTableViewCell.swift */,
-				0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */,
-				00AC624927F0828000373CFB /* PhotosViewController.swift */,
+				003C186527F18AF6005FD7D9 /* Post */,
+				003C186427F18AE2005FD7D9 /* Photo */,
 			);
 			path = "Профиль";
 			sourceTree = "<group>";
@@ -126,6 +127,27 @@
 				001BDCE727C278F200502454 /* mario_logo.png */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		003C186427F18AE2005FD7D9 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				00AC624927F0828000373CFB /* PhotosViewController.swift */,
+				003C186627F18B5B005FD7D9 /* PhotoCollectionViewCell.swift */,
+				003C186827F18C55005FD7D9 /* Photos.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		003C186527F18AF6005FD7D9 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				006DFE3727E8A135003E2983 /* PostTableViewCell.swift */,
+				006DFE3527E88F17003E2983 /* PostAPI.swift */,
+				006DFE3327E88EA5003E2983 /* Post.swift */,
+				0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +230,10 @@
 				0014D0BE27D5D3B900886B58 /* ProfileHeaderView.swift in Sources */,
 				008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */,
 				0043007027EE281500174AE7 /* PhotosTableViewCell.swift in Sources */,
+				003C186727F18B5B005FD7D9 /* PhotoCollectionViewCell.swift in Sources */,
 				00AC624A27F0828000373CFB /* PhotosViewController.swift in Sources */,
 				001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */,
+				003C186927F18C55005FD7D9 /* Photos.swift in Sources */,
 				006DFE3627E88F17003E2983 /* PostAPI.swift in Sources */,
 				00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */,
 				0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */,

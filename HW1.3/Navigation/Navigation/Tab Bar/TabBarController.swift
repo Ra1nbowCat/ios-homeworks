@@ -18,7 +18,11 @@ class TabBarController: UITabBarController {
             let SecondViewController = LogInViewController()
             let secondNavigationController = UINavigationController(rootViewController: SecondViewController)
             
-            viewControllers = [firstNavigationController, secondNavigationController]
+            let ThirdViewController = AnimationViewController()
+            let thirdNavigationController = UINavigationController(rootViewController: ThirdViewController)
+            
+            
+            viewControllers = [firstNavigationController, secondNavigationController, thirdNavigationController]
             
             // Четвертый пункт
             self.tabBar.tintColor = UIColor.systemBlue
@@ -37,6 +41,9 @@ class TabBarController: UITabBarController {
             
             secondNavigationController.tabBarItem.image = UIImage(systemName: "list.dash")
             secondNavigationController.tabBarItem.title = "Профиль"
+            
+            thirdNavigationController.tabBarItem.image = UIImage(systemName: "scribble")
+            thirdNavigationController.tabBarItem.title = "Анимация"
         }
 
     }

@@ -26,6 +26,7 @@
 		006DFE3827E8A135003E2983 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DFE3727E8A135003E2983 /* PostTableViewCell.swift */; };
 		00708B3027C28E75007AD3B5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00708B2F27C28E75007AD3B5 /* PostViewController.swift */; };
 		0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077C12027E5D80200FA1954 /* LogInViewController.swift */; };
+		007FAACA27F6D0CC00510251 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007FAAC927F6D0CC00510251 /* AnimationViewController.swift */; };
 		008232EB27C2A5C900413D26 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008232EA27C2A5C900413D26 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		006DFE3727E8A135003E2983 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		00708B2F27C28E75007AD3B5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0077C12027E5D80200FA1954 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		007FAAC927F6D0CC00510251 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		008232EA27C2A5C900413D26 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		00AC624927F0828000373CFB /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 				001BDCDA27C2720400502454 /* Assets.xcassets */,
 				0014D0BA27D5D23300886B58 /* Tab Bar */,
 				0014D0BB27D5D2A300886B58 /* Лента новостей */,
+				007FAACB27F6D0E900510251 /* Animation */,
 				0014D0BC27D5D2D100886B58 /* Профиль */,
 				001BDCDC27C2720400502454 /* LaunchScreen.storyboard */,
 				001BDCDF27C2720400502454 /* Info.plist */,
@@ -148,6 +151,14 @@
 				0043006F27EE281500174AE7 /* PhotosTableViewCell.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		007FAACB27F6D0E900510251 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				007FAAC927F6D0CC00510251 /* AnimationViewController.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				003C186927F18C55005FD7D9 /* Photos.swift in Sources */,
 				006DFE3627E88F17003E2983 /* PostAPI.swift in Sources */,
 				00553C2B27C383B400C1D9EC /* InfoViewController.swift in Sources */,
+				007FAACA27F6D0CC00510251 /* AnimationViewController.swift in Sources */,
 				0077C12127E5D80200FA1954 /* LogInViewController.swift in Sources */,
 				001BDCD427C2720400502454 /* SceneDelegate.swift in Sources */,
 			);

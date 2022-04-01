@@ -32,8 +32,8 @@ class AnimationViewController: UIViewController {
     func addConstraintsToView() {
             widthConstraint = marioImageView.widthAnchor.constraint(equalToConstant: 150)
             heigthConstraint = marioImageView.heightAnchor.constraint(equalToConstant: 150)
-            leftConstraint = marioImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
-            topConstraint = marioImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
+            leftConstraint = marioImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            topConstraint = marioImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16)
         
         NSLayoutConstraint.activate([
             widthConstraint!, heigthConstraint!, leftConstraint!, topConstraint!
@@ -55,16 +55,17 @@ class AnimationViewController: UIViewController {
     
     private func setupGesture() {
         self.tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
-        self.marioImageView.addGestureRecognizer(self.tapGestureRecognizer) // Тут проблема, не видит, что жму на изображение!
+        self.marioImageView.addGestureRecognizer(self.tapGestureRecognizer)
     }
     
+    
     @objc private func handleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
-        print("Hello")
         guard self.tapGestureRecognizer === gestureRecognizer else {return}
         
         self.isExpanded.toggle()
-        self.widthConstraint?.constant = self.isExpanded ? 300 : 150
-        self.heigthConstraint?.constant = self.isExpanded ? 300 : 150
+        self.widthConstraint?.constant = self.isExpanded ? self.view.frame.width - 32 : 150
+        self.heigthConstraint?.constant = self.isExpanded ? self.view.frame.width - 32 : 150
+        self.topConstraint?.constant = self.isExpanded ? self.view.frame.height / 2 - heigthConstraint!.constant / 2 : 16
         
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded() }

@@ -15,7 +15,7 @@ class LogInViewController: UIViewController {
         var label: UILabel
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 18))
         label.textAlignment = .center
-        label.text = "Error:"
+        label.text = ""
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -189,7 +189,20 @@ class LogInViewController: UIViewController {
     
     @objc private func transitionScreen(button: UINavigationItem) {
          let vc = ProfileViewController()
-         self.navigationController?.pushViewController(vc, animated: true)
+        //let secondText = SecondLogoTextField.text
+        
+        if let firstText = FirstLogoTextField.text, firstText.isEmpty, let secondText = SecondLogoTextField.text, secondText.isEmpty {
+            errorLabel.text = "Error: empty email and password fields"
+        } else if let firstText = FirstLogoTextField.text, firstText.isEmpty {
+            errorLabel.text = "Error: empty email field"
+        } else if let secondText = SecondLogoTextField.text, secondText.isEmpty {
+            errorLabel.text = "Error: empty password field"
+        } else {
+            errorLabel.text = ""
+            self.navigationController?.pushViewController(vc, animated: true)
+            FirstLogoTextField.text = ""
+            SecondLogoTextField.text = ""
+        }
      }
 }
 

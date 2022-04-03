@@ -193,15 +193,21 @@ class LogInViewController: UIViewController {
         
         if let firstText = FirstLogoTextField.text, firstText.isEmpty, let secondText = SecondLogoTextField.text, secondText.isEmpty {
             errorLabel.text = "Error: empty email and password fields"
+            FirstLogoTextField.layer.borderColor = UIColor.red.cgColor
+            SecondLogoTextField.layer.borderColor = UIColor.red.cgColor
         } else if let firstText = FirstLogoTextField.text, firstText.isEmpty {
             errorLabel.text = "Error: empty email field"
+            FirstLogoTextField.layer.borderColor = UIColor.red.cgColor
         } else if let secondText = SecondLogoTextField.text, secondText.isEmpty {
             errorLabel.text = "Error: empty password field"
+            SecondLogoTextField.layer.borderColor = UIColor.red.cgColor
         } else {
             errorLabel.text = ""
             self.navigationController?.pushViewController(vc, animated: true)
             FirstLogoTextField.text = ""
             SecondLogoTextField.text = ""
+            FirstLogoTextField.layer.borderColor = UIColor.lightGray.cgColor
+            SecondLogoTextField.layer.borderColor = UIColor.lightGray.cgColor
         }
      }
 }

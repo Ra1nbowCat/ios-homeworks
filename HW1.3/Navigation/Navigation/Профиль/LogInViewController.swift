@@ -176,7 +176,7 @@ class LogInViewController: UIViewController {
             ])
         
         NSLayoutConstraint.activate([
-            errorLabel.heightAnchor.constraint(equalToConstant: 50),
+            errorLabel.heightAnchor.constraint(equalToConstant: 100),
             errorLabel.topAnchor.constraint(equalTo: LogInButton.bottomAnchor, constant: 26),
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
@@ -201,6 +201,12 @@ class LogInViewController: UIViewController {
         } else if let secondText = SecondLogoTextField.text, secondText.isEmpty {
             errorLabel.text = "Error: empty password field"
             SecondLogoTextField.layer.borderColor = UIColor.red.cgColor
+        } else if let secondTextPassword = SecondLogoTextField.text, secondTextPassword.count < 8 {
+            errorLabel.numberOfLines = 2
+            errorLabel.text = """
+            Error: your password is too short.
+            Try 8+ symbols.
+            """
         } else {
             errorLabel.text = ""
             self.navigationController?.pushViewController(vc, animated: true)

@@ -11,42 +11,17 @@ class LogInViewController: UIViewController {
     
     var newColor = UIColor(rgb: 0x4885CC)
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addElements()
-        addConstraints()
-        
-        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
-        let flexibleSpase = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done , target: self, action: #selector(didTapDone))
-        toolBar.items = [flexibleSpase, doneButton]
-        toolBar.sizeToFit()
-        FirstLogoTextField.inputAccessoryView = toolBar
-        SecondLogoTextField.inputAccessoryView = toolBar
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
-        self.view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-        FirstLogoTextField.resignFirstResponder()
-        SecondLogoTextField.resignFirstResponder()
-    }
-    
-    @objc func keyboardWillShow(notification:NSNotification) {
-        guard let keyboardFrameValue = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.3)
-        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameValue.height, right: 0)
-    }
-
-    @objc func keyboardWillHide(notification:NSNotification) {
-        scrollView.contentOffset = CGPoint.zero
-    }
+    let errorLabel: UILabel = {
+        var label: UILabel
+        label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 18))
+        label.textAlignment = .center
+        label.text = "Error:"
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemRed
+        return label
+    } ()
     
     let LogoImageView: UIImageView = {
         var imageView : UIImageView
@@ -128,6 +103,42 @@ class LogInViewController: UIViewController {
     
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addElements()
+        addConstraints()
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let flexibleSpase = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done , target: self, action: #selector(didTapDone))
+        toolBar.items = [flexibleSpase, doneButton]
+        toolBar.sizeToFit()
+        FirstLogoTextField.inputAccessoryView = toolBar
+        SecondLogoTextField.inputAccessoryView = toolBar
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        FirstLogoTextField.resignFirstResponder()
+        SecondLogoTextField.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillShow(notification:NSNotification) {
+        guard let keyboardFrameValue = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.3)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameValue.height, right: 0)
+    }
+
+    @objc func keyboardWillHide(notification:NSNotification) {
+        scrollView.contentOffset = CGPoint.zero
+    }
     
     func addElements() {
         view.addSubview(scrollView)
@@ -138,6 +149,7 @@ class LogInViewController: UIViewController {
         TextFieldsStackView.addArrangedSubview(SecondLogoTextField)
         containerView.addSubview(TextFieldsStackView)
         view.addSubview(LogInButton)
+        view.addSubview(errorLabel)
     }
     
     func addConstraints() {
@@ -161,6 +173,12 @@ class LogInViewController: UIViewController {
             LogInButton.topAnchor.constraint(equalTo: TextFieldsStackView.bottomAnchor, constant: 16),
             LogInButton.trailingAnchor.constraint(equalTo: TextFieldsStackView.trailingAnchor),
             LogInButton.leadingAnchor.constraint(equalTo: TextFieldsStackView.leadingAnchor)
+            ])
+        
+        NSLayoutConstraint.activate([
+            errorLabel.heightAnchor.constraint(equalToConstant: 50),
+            errorLabel.topAnchor.constraint(equalTo: LogInButton.bottomAnchor, constant: 26),
+            errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
     }
     

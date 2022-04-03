@@ -207,6 +207,25 @@ class LogInViewController: UIViewController {
             Error: your password is too short.
             Try 8+ symbols.
             """
+        } else if let firstText = FirstLogoTextField.text, firstText != "testEmail@mail.ru", let secondText = SecondLogoTextField.text, secondText != "Password123" {
+            errorLabel.numberOfLines = 3
+            errorLabel.text = """
+            Error: not vaild password and email. Try:
+            testEmail@mail.ru
+            Password123
+            """
+        } else if let firstText = FirstLogoTextField.text, firstText != "testEmail@mail.ru" {
+            errorLabel.numberOfLines = 2
+            errorLabel.text = """
+            Error: not vaild email. Try:
+            testEmail@mail.ru
+            """
+        } else if let secondText = SecondLogoTextField.text, secondText != "Password123" {
+            errorLabel.numberOfLines = 2
+            errorLabel.text = """
+            Error: not vaild password. Try:
+            Password123
+            """
         } else {
             errorLabel.text = ""
             self.navigationController?.pushViewController(vc, animated: true)

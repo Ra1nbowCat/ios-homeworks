@@ -37,10 +37,20 @@ class PostTableViewCell: UITableViewCell {
     let hiddenView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
+        view.backgroundColor = .lightGray
         view.alpha = 0
         view.layer.cornerRadius = 12
         return view
+    } ()
+    
+    let infoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 5
+        label.text = """
+        """
+        label.font = UIFont.systemFont(ofSize: 20, weight: .black)
+        return label
     } ()
     
     let postImageView:UIImageView = {
@@ -105,15 +115,21 @@ class PostTableViewCell: UITableViewCell {
         self.contentView.addSubview(likesLabel)
         self.contentView.addSubview(viewsLabel)
         self.contentView.addSubview(hiddenView)
+        hiddenView.addSubview(infoLabel)
         
         likesLabel.isUserInteractionEnabled = true
         postImageView.isUserInteractionEnabled = true
         hiddenView.isUserInteractionEnabled = true //
         setupGesture()
         
+        infoLabel.centerXAnchor.constraint(equalTo: hiddenView.centerXAnchor).isActive = true
+        infoLabel.centerYAnchor.constraint(equalTo: hiddenView.centerYAnchor).isActive = true
+        infoLabel.leadingAnchor.constraint(equalTo: hiddenView.leadingAnchor, constant: 10).isActive = true
+        infoLabel.trailingAnchor.constraint(equalTo: hiddenView.trailingAnchor, constant: -10).isActive = true
+        
         hiddenView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 55).isActive = true
-        hiddenView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
-        hiddenView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        hiddenView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 15).isActive = true
+        hiddenView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -15).isActive = true
         hiddenView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -55).isActive = true
         
         authorLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
@@ -166,6 +182,13 @@ class PostTableViewCell: UITableViewCell {
         UIView.animate(withDuration: 0.8, delay: 0.4) {
             self.hiddenView.alpha = 1
             self.viewsLabel.text = "Views: \(self.counterViews + (self.post?.views!)!)"
+            self.infoLabel.text = """
+            This post is made by: \((self.post?.author!)!)
+            \((self.post?.likes!)! + self.counterLikes) liked this post
+            \((self.post?.views)! + self.counterViews) watched this info
+            
+            Enjoy your content :)
+            """
              }
     }
     

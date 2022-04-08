@@ -13,7 +13,7 @@ class PostTableViewCell: UITableViewCell {
         didSet {
             guard let postItem = post else {return}
             if let author = postItem.author {
-                authorLabel.text = " \(author) "
+                authorLabel.text = "\(author)"
             }
             
             if let name = postItem.image {
@@ -21,15 +21,15 @@ class PostTableViewCell: UITableViewCell {
             }
             
             if let description = postItem.description {
-                descriptionLabel.text = " Comment: \(description) "
+                descriptionLabel.text = "Comment: \(description)"
             }
             
             if let likes = postItem.likes {
-                likesLabel.text = " Likes: \(likes) "
+                likesLabel.text = "Likes: \(likes)"
             }
             
             if let views = postItem.views {
-                viewsLabel.text = " Views: \(views)"
+                viewsLabel.text = "Views: \(views)"
             }
         }
     }
@@ -87,7 +87,9 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
-    var counter = 0
+    var counterLikes = 0
+    
+    var counterViews = 0
     
     private let fourthTapGestureRecognizer = UITapGestureRecognizer()
     
@@ -151,17 +153,19 @@ class PostTableViewCell: UITableViewCell {
     
     @objc private func handleTapGestureFourth(_ gestureRecognizer: UITapGestureRecognizer) {
         guard self.fourthTapGestureRecognizer === gestureRecognizer else {return}
-        counter += 1
+        counterLikes += 1
         
         UIView.animate(withDuration: 0.3, delay: 0.5) {
-            self.likesLabel.text = "Likes: \(self.counter + (self.post?.likes!)!)" }
+            self.likesLabel.text = "Likes: \(self.counterLikes + (self.post?.likes!)!)" }
     }
     
     @objc private func handleTapGestureFifth(_ gestureRecognizer: UITapGestureRecognizer) {
         guard self.fifthTapGestureRecognizer === gestureRecognizer else {return}
+        counterViews += 1
         
         UIView.animate(withDuration: 0.8, delay: 0.4) {
             self.hiddenView.alpha = 1
+            self.viewsLabel.text = "Views: \(self.counterViews + (self.post?.views!)!)"
              }
     }
     

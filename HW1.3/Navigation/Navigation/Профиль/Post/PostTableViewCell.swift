@@ -91,7 +91,9 @@ class PostTableViewCell: UITableViewCell {
     
     private let fourthTapGestureRecognizer = UITapGestureRecognizer()
     
-    private let fifthTapGestureRecognizer = UITapGestureRecognizer() //
+    private let fifthTapGestureRecognizer = UITapGestureRecognizer()
+    
+    private let sixthTapGestureRecognizer = UITapGestureRecognizer()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -100,9 +102,7 @@ class PostTableViewCell: UITableViewCell {
         self.contentView.addSubview(descriptionLabel)
         self.contentView.addSubview(likesLabel)
         self.contentView.addSubview(viewsLabel)
-        
         self.contentView.addSubview(hiddenView)
-        
         
         likesLabel.isUserInteractionEnabled = true
         postImageView.isUserInteractionEnabled = true
@@ -143,7 +143,10 @@ class PostTableViewCell: UITableViewCell {
         self.likesLabel.addGestureRecognizer(self.fourthTapGestureRecognizer)
         
         self.fifthTapGestureRecognizer.addTarget(self, action: #selector(handleTapGestureFifth(_ :)))
-        self.postImageView.addGestureRecognizer(self.fifthTapGestureRecognizer) //
+        self.postImageView.addGestureRecognizer(self.fifthTapGestureRecognizer)
+        
+        self.sixthTapGestureRecognizer.addTarget(self, action: #selector(handleTapGestureSixth(_ :)))
+        self.hiddenView.addGestureRecognizer(self.sixthTapGestureRecognizer)
     }
     
     @objc private func handleTapGestureFourth(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -157,8 +160,16 @@ class PostTableViewCell: UITableViewCell {
     @objc private func handleTapGestureFifth(_ gestureRecognizer: UITapGestureRecognizer) {
         guard self.fifthTapGestureRecognizer === gestureRecognizer else {return}
         
-        UIView.animate(withDuration: 1.0, delay: 0.5) {
+        UIView.animate(withDuration: 0.8, delay: 0.4) {
             self.hiddenView.alpha = 1
+             }
+    }
+    
+    @objc private func handleTapGestureSixth(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.sixthTapGestureRecognizer === gestureRecognizer else {return}
+        
+        UIView.animate(withDuration: 0.5, delay: 0.2) {
+            self.hiddenView.alpha = 0
              }
     }
 

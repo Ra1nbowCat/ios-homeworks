@@ -18,8 +18,6 @@ class AnimationViewController: UIViewController {
         self.setupViews()
         self.addConstraintsToView()
         self.setupGesture()
-        
-        
     }
     
     let newView: UIView = {
@@ -74,10 +72,11 @@ class AnimationViewController: UIViewController {
     
     private let secondTapGestureRecognizer = UITapGestureRecognizer()
     
+    
     private var isExpanded = false
     
-    
     func addConstraintsToView() {
+    
             widthConstraint = marioImageView.widthAnchor.constraint(equalToConstant: 150)
             heigthConstraint = marioImageView.heightAnchor.constraint(equalToConstant: 150)
             leftConstraint = marioImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
@@ -96,7 +95,7 @@ class AnimationViewController: UIViewController {
         NSLayoutConstraint.activate([
             widthConstraint!, heigthConstraint!, leftConstraint!, topConstraint!,
             widthConstraintView!, heigthConstraintView!, leftConstraintView!,topConstraintView!,
-            widthConstraintButton!,heigthConstraintButton!, leftConstraintButton!,topConstraintButton!
+            widthConstraintButton!,heigthConstraintButton!, leftConstraintButton!,topConstraintButton!,
         ])
     }
     
@@ -112,7 +111,6 @@ class AnimationViewController: UIViewController {
         self.marioImageView.addGestureRecognizer(self.tapGestureRecognizer)
         self.newButton.addGestureRecognizer(self.secondTapGestureRecognizer)
     }
-    
     
     @objc private func handleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
         guard self.tapGestureRecognizer === gestureRecognizer else {return}

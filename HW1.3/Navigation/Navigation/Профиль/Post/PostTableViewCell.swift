@@ -9,7 +9,6 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
-    
     var post:Post? {
         didSet {
             guard let postItem = post else {return}
@@ -42,7 +41,6 @@ class PostTableViewCell: UITableViewCell {
              img.clipsToBounds = true
              img.contentMode = .scaleAspectFit
              img.backgroundColor = .white
-            // Понимаю, что здесь нужно черный фон, но сделал это ради собственного плохого понимания дизайна :)
             return img
          }()
     
@@ -80,6 +78,11 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
+    var counter = 0 //
+    
+    private let fourthTapGestureRecognizer = UITapGestureRecognizer()
+    
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.contentView.addSubview(postImageView)
@@ -87,6 +90,10 @@ class PostTableViewCell: UITableViewCell {
         self.contentView.addSubview(descriptionLabel)
         self.contentView.addSubview(likesLabel)
         self.contentView.addSubview(viewsLabel)
+        
+        likesLabel.isUserInteractionEnabled = true //
+        setupGesture()
+        
         
         authorLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
         authorLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
@@ -110,6 +117,19 @@ class PostTableViewCell: UITableViewCell {
 
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
+    }
+    
+    private func setupGesture() {
+        self.fourthTapGestureRecognizer.addTarget(self, action: #selector(handleTapGestureFourth(_ :)))
+        self.likesLabel.addGestureRecognizer(self.fourthTapGestureRecognizer)
+    }
+    
+    @objc private func handleTapGestureFourth(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.fourthTapGestureRecognizer === gestureRecognizer else {return}
+        counter += 1
+        
+        UIView.animate(withDuration: 0.3, delay: 0.5) {
+            self.likesLabel.text = "Likes: \(self.counter + (self.post?.likes!)!)" }
     }
 
 }

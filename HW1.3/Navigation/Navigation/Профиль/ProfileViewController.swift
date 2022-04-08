@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotosTableViewCell
             
@@ -34,6 +35,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.post = posts[indexPath.row]
+        
+        // Единственная идея на данном этапе - добавить все же сюда кнопку, которая при нажатии будет менять текст. Но суть в том, что objc метод я же не смогу сюда вставить.
+        
           return cell
     }
     
@@ -56,7 +60,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     var vc = ProfileHeaderView()
-    private let posts = PostAPI.getPost()
+    var posts = PostAPI().posts
     let postTableView = UITableView()
     
     func activateConstraintsForView() {

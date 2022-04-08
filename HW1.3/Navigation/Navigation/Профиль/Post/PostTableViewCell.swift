@@ -34,6 +34,15 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
+    let hiddenView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .red
+        view.alpha = 0
+        view.layer.cornerRadius = 12
+        return view
+    } ()
+    
     let postImageView:UIImageView = {
              let img = UIImageView()
              img.contentMode = .scaleAspectFill 
@@ -78,10 +87,11 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
-    var counter = 0 //
+    var counter = 0
     
     private let fourthTapGestureRecognizer = UITapGestureRecognizer()
     
+    private let fifthTapGestureRecognizer = UITapGestureRecognizer() //
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -91,9 +101,18 @@ class PostTableViewCell: UITableViewCell {
         self.contentView.addSubview(likesLabel)
         self.contentView.addSubview(viewsLabel)
         
-        likesLabel.isUserInteractionEnabled = true //
+        self.contentView.addSubview(hiddenView)
+        
+        
+        likesLabel.isUserInteractionEnabled = true
+        postImageView.isUserInteractionEnabled = true
+        hiddenView.isUserInteractionEnabled = true //
         setupGesture()
         
+        hiddenView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 55).isActive = true
+        hiddenView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        hiddenView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        hiddenView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -55).isActive = true
         
         authorLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
         authorLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
@@ -122,6 +141,9 @@ class PostTableViewCell: UITableViewCell {
     private func setupGesture() {
         self.fourthTapGestureRecognizer.addTarget(self, action: #selector(handleTapGestureFourth(_ :)))
         self.likesLabel.addGestureRecognizer(self.fourthTapGestureRecognizer)
+        
+        self.fifthTapGestureRecognizer.addTarget(self, action: #selector(handleTapGestureFifth(_ :)))
+        self.postImageView.addGestureRecognizer(self.fifthTapGestureRecognizer) //
     }
     
     @objc private func handleTapGestureFourth(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -130,6 +152,14 @@ class PostTableViewCell: UITableViewCell {
         
         UIView.animate(withDuration: 0.3, delay: 0.5) {
             self.likesLabel.text = "Likes: \(self.counter + (self.post?.likes!)!)" }
+    }
+    
+    @objc private func handleTapGestureFifth(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.fifthTapGestureRecognizer === gestureRecognizer else {return}
+        
+        UIView.animate(withDuration: 1.0, delay: 0.5) {
+            self.hiddenView.alpha = 1
+             }
     }
 
 }

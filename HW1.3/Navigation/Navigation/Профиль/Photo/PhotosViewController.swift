@@ -18,7 +18,7 @@ class PhotosViewController: UIViewController {
         return collectionView
     }()
 
-    private enum LayoutConstant {
+   enum LayoutConstant {
         static let spacing: CGFloat = 8.0
         static let itemHeight: CGFloat = 150.0
     }
@@ -110,6 +110,8 @@ extension PhotosViewController: UICollectionViewDataSource {
     }
 }
 
+
+
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
@@ -117,10 +119,11 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
 
         return CGSize(width: width, height: LayoutConstant.itemHeight)
     }
+    
 
     func itemWidth(for width: CGFloat, spacing: CGFloat) -> CGFloat {
-        let itemsInRow: CGFloat = 3
-
+        let itemsInRow:CGFloat = 3
+        
         let totalSpacing: CGFloat = 2 * spacing + (itemsInRow - 1) * spacing
         let finalWidth = (width - totalSpacing) / itemsInRow
 

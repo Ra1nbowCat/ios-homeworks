@@ -132,7 +132,7 @@ class LogInViewController: UIViewController {
         guard let keyboardFrameValue = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.3)
+        scrollView.contentOffset = CGPoint(x:0, y:keyboardFrameValue.height * 0.4)
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameValue.height, right: 0)
     }
 
@@ -148,8 +148,8 @@ class LogInViewController: UIViewController {
         TextFieldsStackView.addArrangedSubview(FirstLogoTextField)
         TextFieldsStackView.addArrangedSubview(SecondLogoTextField)
         containerView.addSubview(TextFieldsStackView)
-        view.addSubview(LogInButton)
-        view.addSubview(errorLabel)
+        containerView.addSubview(LogInButton)
+        containerView.addSubview(errorLabel)
     }
     
     private func addConstraints() {

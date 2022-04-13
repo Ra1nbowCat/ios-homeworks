@@ -12,14 +12,14 @@ class TabBarController: UITabBarController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            let FirstViewController = FeedViewController()
-            let firstNavigationController = UINavigationController(rootViewController: FirstViewController)
+            let firstViewController = FeedViewController()
+            let firstNavigationController = UINavigationController(rootViewController: firstViewController)
             
-            let SecondViewController = LogInViewController()
-            let secondNavigationController = UINavigationController(rootViewController: SecondViewController)
+            let secondViewController = LogInViewController()
+            let secondNavigationController = UINavigationController(rootViewController: secondViewController)
             
-            let ThirdViewController = AnimationViewController()
-            let thirdNavigationController = UINavigationController(rootViewController: ThirdViewController)
+            let thirdViewController = AnimationViewController()
+            let thirdNavigationController = UINavigationController(rootViewController: thirdViewController)
             
             
             viewControllers = [firstNavigationController, secondNavigationController, thirdNavigationController]
@@ -47,15 +47,3 @@ class TabBarController: UITabBarController {
         }
 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-

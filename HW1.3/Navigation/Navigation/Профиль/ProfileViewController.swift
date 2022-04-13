@@ -7,37 +7,30 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+    
+    @objc private func didTapPhotoButtonTwo() {
+            navVC.delegate = self
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
-    }
-    
-    public let navVC = UINavigationController(rootViewController: PhotosViewController())
-    
-    @objc func whichButtonPressed(sender: UIButton) {
-        navVC.modalPresentationStyle = .fullScreen
-        self.present(navVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotosTableViewCell
-            
-            cell.PhotoButton.addTarget(self, action: #selector(whichButtonPressed(sender:)), for: .touchUpInside)
-            
-            cell.firstPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
-            cell.secondPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
-            cell.thirdPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
-            cell.fourthPhotoImage.widthAnchor.constraint(equalToConstant: (self.view.frame.maxX) / 4 - 12).isActive = true
+            cell.selectionStyle = .none
+            cell.photoButton.addTarget(self, action: #selector(didTapPhotoButtonTwo), for: .touchUpInside) //
             return cell
         }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         cell.post = posts[indexPath.row]
-        
-        // Единственная идея на данном этапе - добавить все же сюда кнопку, которая при нажатии будет менять текст. Но суть в том, что objc метод я же не смогу сюда вставить.
-        
+        cell.selectionStyle = .none
           return cell
     }
     
@@ -58,12 +51,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    private var vc = ProfileHeaderView()
+    private var posts = PostAPI().posts
+    private let postTableView = UITableView()
+    private let navVC = UINavigationController(rootViewController: PhotosViewController())
     
-    var vc = ProfileHeaderView()
-    var posts = PostAPI().posts
-    let postTableView = UITableView()
-    
-    func activateConstraintsForView() {
+    private func activateConstraintsForView() {
         vc.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -89,5 +82,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         postTableView.register(PostTableViewCell.self, forCellReuseIdentifier: "postCell")
         postTableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: "photoCell")
+    }
+}
+
+extension ProfileViewController: Delegate {
+    func didTapPhotoButton() {
+        let destination = PhotosViewController()
+        navigationController?.pushViewController(destination, animated: true)
     }
 }

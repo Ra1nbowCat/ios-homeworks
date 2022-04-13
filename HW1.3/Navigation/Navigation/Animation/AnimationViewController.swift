@@ -20,7 +20,7 @@ class AnimationViewController: UIViewController {
         self.setupGesture()
     }
     
-    let newView: UIView = {
+    private let newView: UIView = {
         var newview: UIView
         newview = UIView()
         newview.backgroundColor = .systemRed
@@ -29,7 +29,7 @@ class AnimationViewController: UIViewController {
         return newview
     } ()
     
-    let newButton: UIButton = {
+    private let newButton: UIButton = {
         var button = UIButton()
         button.alpha = 0
         button.backgroundColor = .white
@@ -41,7 +41,7 @@ class AnimationViewController: UIViewController {
         return button
     } ()
     
-    let marioImageView: UIImageView = {
+    private let marioImageView: UIImageView = {
         var imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 16, y: 16, width: 150, height: 150))
            imageView.image = UIImage(named:"fifteenth_meme")
@@ -72,10 +72,9 @@ class AnimationViewController: UIViewController {
     
     private let secondTapGestureRecognizer = UITapGestureRecognizer()
     
-    
     private var isExpanded = false
     
-    func addConstraintsToView() {
+    private func addConstraintsToView() {
     
             widthConstraint = marioImageView.widthAnchor.constraint(equalToConstant: 150)
             heigthConstraint = marioImageView.heightAnchor.constraint(equalToConstant: 150)
@@ -99,7 +98,7 @@ class AnimationViewController: UIViewController {
         ])
     }
     
-    func setupViews() {
+    private func setupViews() {
         self.view.addSubview(self.marioImageView)
         self.view.addSubview(self.newView)
         self.view.addSubview(self.newButton)

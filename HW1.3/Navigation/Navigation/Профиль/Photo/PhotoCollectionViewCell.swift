@@ -17,15 +17,11 @@ final class PhotoCell: UICollectionViewCell {
     private var heigthConstraintView: NSLayoutConstraint?
     private var leftConstraintView: NSLayoutConstraint?
     private var topConstraintView: NSLayoutConstraint?
-    
-    //private let tapGestureRecognizerPhoto = UITapGestureRecognizer()
-    
-    //private var isExpandedPhoto = false
 
     private enum Constants {
         static let imageHeight: CGFloat = 150.0
     }
-
+    
     private let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleToFill
@@ -39,7 +35,6 @@ final class PhotoCell: UICollectionViewCell {
         super.init(frame: .zero)
         setupViews()
         setupLayouts()
-        //setupGesture()
     }
 
     private func setupViews() {
@@ -61,28 +56,6 @@ final class PhotoCell: UICollectionViewCell {
         ])
     }
     
-    /* private func setupGesture() {
-        self.tapGestureRecognizerPhoto.addTarget(self, action: #selector(handleTapGesturePhoto(_:)))
-        self.photoImageView.addGestureRecognizer(self.tapGestureRecognizerPhoto)
-    }
-    
-    @objc private func handleTapGesturePhoto(_ gestureRecognizer: UITapGestureRecognizer) {
-        guard self.tapGestureRecognizerPhoto === gestureRecognizer else {return}
-        
-        self.isExpandedPhoto.toggle()
-        
-        if isExpandedPhoto == true {
-        
-            self.heigthConstraintView?.constant = self.isExpandedPhoto ? Constants.imageHeight + 150 : 150
-        
-            UIView.animate(withDuration: 0.5) {
-                self.contentView.layoutIfNeeded() }
-            completion: { _
-                in
-            }
-        }
-    } */
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

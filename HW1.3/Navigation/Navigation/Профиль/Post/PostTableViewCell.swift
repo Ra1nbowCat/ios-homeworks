@@ -34,7 +34,7 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-    let hiddenView: UIView = {
+    private let hiddenView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .lightGray
@@ -43,7 +43,7 @@ class PostTableViewCell: UITableViewCell {
         return view
     } ()
     
-    let infoLabel: UILabel = {
+    private let infoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 5
@@ -53,7 +53,7 @@ class PostTableViewCell: UITableViewCell {
         return label
     } ()
     
-    let postImageView:UIImageView = {
+    private let postImageView:UIImageView = {
              let img = UIImageView()
              img.contentMode = .scaleAspectFill 
              img.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class PostTableViewCell: UITableViewCell {
             return img
          }()
     
-    let authorLabel:UILabel = {
+    private let authorLabel:UILabel = {
             let label = UILabel()
             label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -72,7 +72,7 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
-    let likesLabel:UILabel = {
+    private let likesLabel:UILabel = {
             let label = UILabel()
             label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +80,7 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
-    let viewsLabel:UILabel = {
+    private let viewsLabel:UILabel = {
             let label = UILabel()
             label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
@@ -88,7 +88,7 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
-    let descriptionLabel:UILabel = {
+    private let descriptionLabel:UILabel = {
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             label.textColor = .systemGray
@@ -97,9 +97,9 @@ class PostTableViewCell: UITableViewCell {
             return label
     }()
     
-    var counterLikes = 0
+    private var counterLikes = 0
     
-    var counterViews = 0
+    private var counterViews = 0
     
     private let fourthTapGestureRecognizer = UITapGestureRecognizer()
     
@@ -107,8 +107,7 @@ class PostTableViewCell: UITableViewCell {
     
     private let sixthTapGestureRecognizer = UITapGestureRecognizer()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    private func setupView() {
         self.contentView.addSubview(postImageView)
         self.contentView.addSubview(authorLabel)
         self.contentView.addSubview(descriptionLabel)
@@ -120,8 +119,9 @@ class PostTableViewCell: UITableViewCell {
         likesLabel.isUserInteractionEnabled = true
         postImageView.isUserInteractionEnabled = true
         hiddenView.isUserInteractionEnabled = true //
-        setupGesture()
-        
+    }
+    
+    private func setupConstraints() {
         infoLabel.centerXAnchor.constraint(equalTo: hiddenView.centerXAnchor).isActive = true
         infoLabel.centerYAnchor.constraint(equalTo: hiddenView.centerYAnchor).isActive = true
         infoLabel.leadingAnchor.constraint(equalTo: hiddenView.leadingAnchor, constant: 10).isActive = true
@@ -150,6 +150,13 @@ class PostTableViewCell: UITableViewCell {
         
         viewsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 15).isActive = true
         viewsLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16).isActive = true
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
+        setupGesture()
+        setupConstraints()
      }
 
      required init?(coder aDecoder: NSCoder) {

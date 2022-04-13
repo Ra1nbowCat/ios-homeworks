@@ -9,9 +9,9 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    var newColor = UIColor(rgb: 0x4885CC)
+    private var newColor = UIColor(rgb: 0x4885CC)
     
-    let errorLabel: UILabel = {
+    private let errorLabel: UILabel = {
         var label: UILabel
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 18))
         label.textAlignment = .center
@@ -23,7 +23,7 @@ class LogInViewController: UIViewController {
         return label
     } ()
     
-    let LogoImageView: UIImageView = {
+    private let LogoImageView: UIImageView = {
         var imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 16, y: 16, width: 150, height: 150))
         imageView.image = UIImage(named:"logo")
@@ -31,7 +31,7 @@ class LogInViewController: UIViewController {
         return imageView
     } ()
     
-    let FirstLogoTextField: UITextField = {
+    private let FirstLogoTextField: UITextField = {
         var textField = UITextField()
         textField.placeholder = "Email or phone"
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -46,7 +46,7 @@ class LogInViewController: UIViewController {
         return textField
     } ()
     
-    let SecondLogoTextField: UITextField = {
+    private let SecondLogoTextField: UITextField = {
         var textField = UITextField()
         textField.placeholder = "Password"
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
@@ -62,7 +62,7 @@ class LogInViewController: UIViewController {
         return textField
     } ()
     
-    let TextFieldsStackView: UIStackView = {
+    private let TextFieldsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -70,7 +70,7 @@ class LogInViewController: UIViewController {
         return stackView
     } ()
     
-    let LogInButton: UIButton = {
+    private let LogInButton: UIButton = {
         var button = UIButton(type: .system)
         button.layer.cornerRadius = 10
         button.setTitle("Log in", for: .normal)
@@ -86,14 +86,14 @@ class LogInViewController: UIViewController {
         return button
     } ()
     
-    lazy var containerView: UIView = {
+    private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.frame.size = contentViewSize
         return view
     } ()
     
-    lazy var scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let view = UIScrollView(frame: .zero)
         view.backgroundColor = .white
         view.contentSize = contentViewSize
@@ -101,7 +101,7 @@ class LogInViewController: UIViewController {
         return view
     } ()
     
-    lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+    private lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,12 +123,12 @@ class LogInViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+    @objc private func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         FirstLogoTextField.resignFirstResponder()
         SecondLogoTextField.resignFirstResponder()
     }
     
-    @objc func keyboardWillShow(notification:NSNotification) {
+    @objc private func keyboardWillShow(notification:NSNotification) {
         guard let keyboardFrameValue = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
@@ -136,11 +136,11 @@ class LogInViewController: UIViewController {
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrameValue.height, right: 0)
     }
 
-    @objc func keyboardWillHide(notification:NSNotification) {
+    @objc private func keyboardWillHide(notification:NSNotification) {
         scrollView.contentOffset = CGPoint.zero
     }
     
-    func addElements() {
+    private func addElements() {
         view.addSubview(scrollView)
         scrollView.addSubview(containerView)
         
@@ -152,7 +152,7 @@ class LogInViewController: UIViewController {
         view.addSubview(errorLabel)
     }
     
-    func addConstraints() {
+    private func addConstraints() {
         NSLayoutConstraint.activate([
             LogoImageView.heightAnchor.constraint(equalToConstant: 100),
             LogoImageView.widthAnchor.constraint(equalToConstant: 100),
@@ -182,7 +182,7 @@ class LogInViewController: UIViewController {
             ])
     }
     
-    @objc func didTapDone() {
+    @objc private func didTapDone() {
         FirstLogoTextField.resignFirstResponder()
         SecondLogoTextField.resignFirstResponder()
     }

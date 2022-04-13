@@ -11,12 +11,12 @@ class ProfileHeaderView: UIView {
     
     private var statusText: String = ""
     
-    let contenView: UIView = {
+    private let contenView: UIView = {
         let view = UIView(frame: CGRect())
         return view
     } ()
     
-    let newImageView: UIImageView = {
+    private let newImageView: UIImageView = {
         var imageView : UIImageView
         imageView  = UIImageView(frame: CGRect(x: 16, y: 16, width: 150, height: 150))
            imageView.image = UIImage(named:"mario_logo")
@@ -28,7 +28,7 @@ class ProfileHeaderView: UIView {
         return imageView
     } ()
     
-    let mainLabel: UILabel = {
+    private let mainLabel: UILabel = {
         var label: UILabel
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 18))
         label.textAlignment = .left
@@ -39,7 +39,7 @@ class ProfileHeaderView: UIView {
         return label
     } ()
     
-    let statusLabel: UILabel = {
+    private let statusLabel: UILabel = {
         var secondLabel: UILabel
         secondLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 18))
         secondLabel.textAlignment = .left
@@ -50,7 +50,7 @@ class ProfileHeaderView: UIView {
         return secondLabel
     } ()
     
-    let showStatusButton: UIButton = {
+    private let showStatusButton: UIButton = {
         var button = UIButton(type: .system)
         button.layer.cornerRadius = 4
         button.setTitle("Задать статус", for: .normal)
@@ -68,7 +68,7 @@ class ProfileHeaderView: UIView {
         return button
     } ()
     
-    let statusTextField: UITextField = {
+    private let statusTextField: UITextField = {
         var textField = UITextField()
         textField.placeholder = "Enter text here"
         textField.font = UIFont.systemFont(ofSize: 15, weight: .regular)
@@ -104,7 +104,7 @@ class ProfileHeaderView: UIView {
         fatalError("Cannot find coder")
     }
     
-    func setupViews() {
+    private func setupViews() {
         self.addSubview(newImageView)
         self.addSubview(mainLabel)
         self.addSubview(statusLabel)
@@ -112,7 +112,14 @@ class ProfileHeaderView: UIView {
         self.addSubview(statusTextField)
     }
     
-    func addConstraintsToView() {
+    private func addConstraintsToView() {
+        NSLayoutConstraint.activate([
+            showStatusButton.heightAnchor.constraint(equalToConstant: 50),
+            showStatusButton.topAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: 16),
+            showStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            showStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            ])
+        
         NSLayoutConstraint.activate([
             newImageView.widthAnchor.constraint(equalToConstant: 150),
             newImageView.heightAnchor.constraint(equalToConstant: 150),
@@ -121,24 +128,17 @@ class ProfileHeaderView: UIView {
             ])
         
         NSLayoutConstraint.activate([
-            mainLabel.widthAnchor.constraint(equalToConstant: 150),
+            mainLabel.trailingAnchor.constraint(equalTo: showStatusButton.trailingAnchor, constant: 0),
             mainLabel.heightAnchor.constraint(equalToConstant: 18),
             mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 27),
             mainLabel.leadingAnchor.constraint(equalTo: newImageView.trailingAnchor, constant: 20)
             ])
         
         NSLayoutConstraint.activate([
-            statusLabel.widthAnchor.constraint(equalToConstant: 150),
+            statusLabel.trailingAnchor.constraint(equalTo: showStatusButton.trailingAnchor, constant: 0),
             statusLabel.heightAnchor.constraint(equalToConstant: 18),
             statusLabel.bottomAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: -68),
             statusLabel.leadingAnchor.constraint(equalTo: newImageView.trailingAnchor, constant: 20)
-            ])
-        
-        NSLayoutConstraint.activate([
-            showStatusButton.heightAnchor.constraint(equalToConstant: 50),
-            showStatusButton.topAnchor.constraint(equalTo: newImageView.bottomAnchor, constant: 16),
-            showStatusButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            showStatusButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             ])
         
         NSLayoutConstraint.activate([
@@ -149,11 +149,11 @@ class ProfileHeaderView: UIView {
             ])
     }
     
-    @objc func didTapDone() {
+    @objc private func didTapDone() {
         statusTextField.resignFirstResponder()
     }
     
-    @IBAction func buttonPressed(sender: UIButton){
+    @IBAction private func buttonPressed(sender: UIButton){
         if statusTextField.text == ""  {
             statusLabel.textColor = .red
             statusLabel.text = "Error: empty status"
@@ -163,7 +163,7 @@ class ProfileHeaderView: UIView {
         }
     }
     
-    @objc func statusTextChanged(_ textField: UITextField) {
+    @objc private func statusTextChanged(_ textField: UITextField) {
         statusText = statusTextField.text!
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class PhotosViewController: UIViewController {
 
-    var photos: [Photos] = []
+    private var photos: [Photos] = []
 
     private let collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
@@ -18,7 +18,7 @@ class PhotosViewController: UIViewController {
         return collectionView
     }()
 
-   enum LayoutConstant {
+   private enum LayoutConstant {
         static let spacing: CGFloat = 8.0
         static let itemHeight: CGFloat = 150.0
     }
@@ -36,7 +36,7 @@ class PhotosViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    @objc func transitionScreenPop() {
+    @objc private func transitionScreenPop() {
         self.navigationController?.dismiss(animated: true)
      }
     

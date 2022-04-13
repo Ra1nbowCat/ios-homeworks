@@ -11,7 +11,7 @@ import UIKit
 
 class PostViewController: UIViewController {
 
-    var closure: (() -> Void)? 
+    private var closure: (() -> Void)? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,29 +24,9 @@ class PostViewController: UIViewController {
     }
     
     @objc private func transitionScreen() {
-         let vc2 = InfoViewController()
-         vc2.closure = {
-             
-         }
-         //navigationController?.pushViewController(vc2, animated: true)
-        
+        let vc2 = InfoViewController()
         let navigationController = UINavigationController(rootViewController: vc2)
         navigationController.modalPresentationStyle = UIModalPresentationStyle.automatic
         self.present(navigationController, animated: true, completion: nil)
      }
-    
-    
-   
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

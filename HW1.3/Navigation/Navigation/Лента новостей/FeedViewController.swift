@@ -25,7 +25,7 @@ class FeedViewController: UIViewController {
     
     }
     
-    let transitionButton: UIButton = {
+    private let transitionButton: UIButton = {
         let transitionButton = UIButton()
         transitionButton.layer.cornerRadius = 12
         transitionButton.setTitle("Переход на пост", for: .normal)
@@ -36,7 +36,7 @@ class FeedViewController: UIViewController {
         return transitionButton
     } ()
     
-    let secondTransitionButton: UIButton = {
+    private let secondTransitionButton: UIButton = {
         let transitionButton = UIButton()
         transitionButton.layer.cornerRadius = 12
         transitionButton.setTitle("Второй переход", for: .normal)
@@ -47,7 +47,7 @@ class FeedViewController: UIViewController {
         return transitionButton
     } ()
     
-    let buttonStackView: UIStackView = {
+    private let buttonStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -56,7 +56,7 @@ class FeedViewController: UIViewController {
         return stackView
     } ()
     
-    func addConstraintsToStackView() {
+    private func addConstraintsToStackView() {
         NSLayoutConstraint.activate([
             buttonStackView.heightAnchor.constraint(equalToConstant: 110),
             buttonStackView.widthAnchor.constraint(equalToConstant: 300),
@@ -68,27 +68,12 @@ class FeedViewController: UIViewController {
     @objc private func transitionScreen(button: UINavigationItem) {
          let vc = PostViewController()
          vc.title = newPost.title
-         vc.closure = {
-             
-         }
          self.navigationController?.pushViewController(vc, animated: true)
      }
     
-    // Седьмое задание (+ сверху в функцию добавил!)
-    struct Post {
+    private struct Post {
         var title:String
     }
     
-    var newPost =  Post(title: "Важная информация!")
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    private var newPost =  Post(title: "Важная информация!")
 }

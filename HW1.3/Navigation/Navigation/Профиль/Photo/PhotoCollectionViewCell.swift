@@ -19,6 +19,8 @@ final class PhotoCell: UICollectionViewCell {
     
     var delegatePhoto: photoDelegate?
     
+    var imageNameString = ""
+    
     func screenTransitionTwo() {
         self.delegatePhoto?.screenTransition()
     }
@@ -73,8 +75,13 @@ final class PhotoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func addName(from: String) {
+        imageNameString = from
+    }
+    
     func setup(with photo: Photos) {
         photoImageView.image = UIImage(named: photo.imageName)
+        imageNameString = photo.imageName
     }
     
     private func setupGesture() {

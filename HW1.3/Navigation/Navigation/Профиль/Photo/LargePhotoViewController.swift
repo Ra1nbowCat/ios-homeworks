@@ -9,7 +9,7 @@ import UIKit
 
 class LargePhotoViewController: UIViewController {
     
-    let photoImageView: UIImageView = {
+    let largePhotoImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .red
@@ -17,30 +17,22 @@ class LargePhotoViewController: UIViewController {
         return imageView
     }()
     
-    private let newButton: UIButton = {
-        var button = UIButton()
-        button.alpha = 1
-        button.backgroundColor = .red
-        button.clipsToBounds = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        let image = UIImage(systemName: "power.circle")
-        button.setBackgroundImage(image, for: UIControl.State.normal)
-        return button
-    } ()
+    var extraString = "2"
     
     private func setupView() {
-        view.addSubview(photoImageView)
-        view.addSubview(newButton)
+        view.addSubview(largePhotoImageView)
     }
     
     private func setupConstraints() {
-        photoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        photoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        photoImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        photoImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        newButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
-        newButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        largePhotoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        largePhotoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        largePhotoImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        largePhotoImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(extraString)
+        // сюда надо будет добавлять имя картинки, которую хочу подгружать
     }
 
     override func viewDidLoad() {

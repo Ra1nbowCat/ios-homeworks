@@ -10,7 +10,9 @@ import UIKit
 class PhotosViewController: UIViewController {
 
     private var photos: [Photos] = []
-
+    
+    private let photoVC = UINavigationController(rootViewController: LargePhotoViewController()) //
+    
     private let collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
@@ -103,7 +105,8 @@ extension PhotosViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCell.identifier, for: indexPath) as! PhotoCell
-
+        
+        cell.delegatePhoto = self
         let photo = photos[indexPath.row]
         cell.setup(with: photo)
         return cell
@@ -140,5 +143,12 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return LayoutConstant.spacing
+    }
+}
+
+extension PhotosViewController: photoDelegate {
+    func screenTransition() {
+        photoVC.modalPresentationStyle = .pageSheet
+        present(photoVC, animated: true)
     }
 }

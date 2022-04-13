@@ -17,7 +17,6 @@ class PhotosTableViewCell: UITableViewCell {
     
     @objc private func didTapPhotoButton() {
         self.delegate?.didTapPhotoButton()
-        print("123")
     }
 
     private let mainLabel:UILabel = {

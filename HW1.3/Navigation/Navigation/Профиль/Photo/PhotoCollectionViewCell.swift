@@ -11,12 +11,24 @@ protocol ReusableView: AnyObject {
     static var identifier: String { get }
 }
 
+protocol photoDelegate {
+    func screenTransition()
+}
+
 final class PhotoCell: UICollectionViewCell {
+    
+    var delegatePhoto: photoDelegate?
+    
+    func screenTransitionTwo() {
+        self.delegatePhoto?.screenTransition()
+    }
     
     private var rightConstraintView: NSLayoutConstraint?
     private var heigthConstraintView: NSLayoutConstraint?
     private var leftConstraintView: NSLayoutConstraint?
     private var topConstraintView: NSLayoutConstraint?
+    
+    private let tapGestureRecognizer = UITapGestureRecognizer() //
 
     private enum Constants {
         static let imageHeight: CGFloat = 150.0
@@ -35,6 +47,7 @@ final class PhotoCell: UICollectionViewCell {
         super.init(frame: .zero)
         setupViews()
         setupLayouts()
+        setupGesture()
     }
 
     private func setupViews() {
@@ -62,6 +75,16 @@ final class PhotoCell: UICollectionViewCell {
     
     func setup(with photo: Photos) {
         photoImageView.image = UIImage(named: photo.imageName)
+    }
+    
+    private func setupGesture() {
+        self.tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
+        self.photoImageView.addGestureRecognizer(self.tapGestureRecognizer)
+    }
+    
+    @objc private func handleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.tapGestureRecognizer === gestureRecognizer else {return}
+        screenTransitionTwo()
     }
 }
 

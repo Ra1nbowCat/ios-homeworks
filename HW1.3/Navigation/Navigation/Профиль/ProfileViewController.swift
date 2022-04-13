@@ -9,12 +9,6 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
     
-    @objc private func didTapPhotoButtonTwo() {
-            navVC.delegate = self
-            navVC.modalPresentationStyle = .fullScreen
-            self.present(navVC, animated: true)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -24,7 +18,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell") as! PhotosTableViewCell
             cell.selectionStyle = .none
-            cell.photoButton.addTarget(self, action: #selector(didTapPhotoButtonTwo), for: .touchUpInside) //
+            cell.delegate = self
             return cell
         }
         
@@ -87,7 +81,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 extension ProfileViewController: Delegate {
     func didTapPhotoButton() {
-        let destination = PhotosViewController()
-        navigationController?.pushViewController(destination, animated: true)
+        navVC.delegate = self
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true)
     }
 }

@@ -12,17 +12,19 @@ protocol ReusableView: AnyObject {
 }
 
 protocol photoDelegate {
-    func screenTransition()
+    func screenTransition(add: UIImageView)
 }
 
 final class PhotoCell: UICollectionViewCell {
     
     var delegatePhoto: photoDelegate?
     
-    var imageNameString = ""
+    var isExpanded = false
+    
+    var imageNameString = "1"
     
     func screenTransitionTwo() {
-        self.delegatePhoto?.screenTransition()
+        self.delegatePhoto?.screenTransition(add: photoImageViewSecond)
     }
     
     private var rightConstraintView: NSLayoutConstraint?
@@ -31,10 +33,20 @@ final class PhotoCell: UICollectionViewCell {
     private var topConstraintView: NSLayoutConstraint?
     
     private let tapGestureRecognizer = UITapGestureRecognizer() //
+    
+    private let secondTapGestureRecognizer = UITapGestureRecognizer()
 
     private enum Constants {
         static let imageHeight: CGFloat = 150.0
     }
+    
+    private let photoImageViewSecond: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleToFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
     
     private let photoImageView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -57,6 +69,7 @@ final class PhotoCell: UICollectionViewCell {
         contentView.backgroundColor = .white
 
         contentView.addSubview(photoImageView)
+        //contentView.addSubview(photoImageViewSecond)
     }
 
     private func setupLayouts() {
@@ -75,12 +88,9 @@ final class PhotoCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addName(from: String) {
-        imageNameString = from
-    }
-    
     func setup(with photo: Photos) {
         photoImageView.image = UIImage(named: photo.imageName)
+        photoImageViewSecond.image = UIImage(named: photo.imageName)
         imageNameString = photo.imageName
     }
     

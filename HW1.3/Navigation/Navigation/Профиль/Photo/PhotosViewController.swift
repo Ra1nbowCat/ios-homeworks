@@ -24,6 +24,14 @@ class PhotosViewController: UIViewController {
         static let spacing: CGFloat = 8.0
         static let itemHeight: CGFloat = 150.0
     }
+    
+    let newView:UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        return view
+    } ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,8 +155,17 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PhotosViewController: photoDelegate {
-    func screenTransition() {
-        photoVC.modalPresentationStyle = .pageSheet
-        present(photoVC, animated: true)
+    func screenTransition(add: UIImageView) {
+        view.addSubview(newView)
+        newView.addSubview(add)
+        add.clipsToBounds = true
+        
+        newView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        newView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        newView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        newView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        add.centerXAnchor.constraint(equalTo: newView.centerXAnchor).isActive = true
+        add.centerYAnchor.constraint(equalTo: newView.centerYAnchor).isActive = true
     }
 }

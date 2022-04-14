@@ -17,8 +17,6 @@ class LargePhotoViewController: UIViewController {
         return imageView
     }()
     
-    var extraString = "2"
-    
     private func setupView() {
         view.addSubview(largePhotoImageView)
     }
@@ -28,11 +26,6 @@ class LargePhotoViewController: UIViewController {
         largePhotoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         largePhotoImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         largePhotoImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print(extraString)
-        // сюда надо будет добавлять имя картинки, которую хочу подгружать
     }
 
     override func viewDidLoad() {

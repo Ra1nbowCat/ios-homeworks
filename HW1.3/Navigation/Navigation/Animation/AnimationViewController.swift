@@ -79,7 +79,7 @@ class AnimationViewController: UIViewController {
             widthConstraint = marioImageView.widthAnchor.constraint(equalToConstant: 150)
             heigthConstraint = marioImageView.heightAnchor.constraint(equalToConstant: 150)
             leftConstraint = marioImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
-        topConstraint = marioImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
+            topConstraint = marioImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         
             widthConstraintView = newView.widthAnchor.constraint(equalToConstant: 50)
             heigthConstraintView = newView.heightAnchor.constraint(equalToConstant: 50)

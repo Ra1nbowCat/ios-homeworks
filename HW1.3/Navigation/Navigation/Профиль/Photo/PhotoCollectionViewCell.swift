@@ -19,10 +19,6 @@ final class PhotoCell: UICollectionViewCell {
     
     var delegatePhoto: photoDelegate?
     
-    var isExpanded = false
-    
-    var imageNameString = "1"
-    
     func screenTransitionTwo() {
         self.delegatePhoto?.screenTransition(add: photoImageViewSecond)
     }
@@ -69,7 +65,6 @@ final class PhotoCell: UICollectionViewCell {
         contentView.backgroundColor = .white
 
         contentView.addSubview(photoImageView)
-        //contentView.addSubview(photoImageViewSecond)
     }
 
     private func setupLayouts() {
@@ -91,7 +86,6 @@ final class PhotoCell: UICollectionViewCell {
     func setup(with photo: Photos) {
         photoImageView.image = UIImage(named: photo.imageName)
         photoImageViewSecond.image = UIImage(named: photo.imageName)
-        imageNameString = photo.imageName
     }
     
     private func setupGesture() {

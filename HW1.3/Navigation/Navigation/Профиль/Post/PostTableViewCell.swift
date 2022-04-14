@@ -118,7 +118,7 @@ class PostTableViewCell: UITableViewCell {
         
         likesLabel.isUserInteractionEnabled = true
         postImageView.isUserInteractionEnabled = true
-        hiddenView.isUserInteractionEnabled = true //
+        hiddenView.isUserInteractionEnabled = true 
     }
     
     private func setupConstraints() {

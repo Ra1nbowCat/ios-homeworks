@@ -11,8 +11,6 @@ class PhotosViewController: UIViewController {
 
     private var photos: [Photos] = []
     
-    private let photoVC = UINavigationController(rootViewController: LargePhotoViewController()) //
-    
     private let collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
@@ -25,14 +23,28 @@ class PhotosViewController: UIViewController {
         static let itemHeight: CGFloat = 150.0
     }
     
-    let newView:UIView = {
+    private let newView:UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
+        view.isUserInteractionEnabled = true
         return view
     } ()
-
+    
+    private let tapGestureRecognizer = UITapGestureRecognizer()
+    
+    private func setupGesture() {
+        self.tapGestureRecognizer.addTarget(self, action: #selector(handleTapGesture(_:)))
+        self.newView.addGestureRecognizer(self.tapGestureRecognizer)
+    }
+    
+    @objc private func handleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.tapGestureRecognizer === gestureRecognizer else {return}
+        newView.subviews.forEach({ $0.removeFromSuperview() })
+        self.newView.removeFromSuperview()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Photo gallery"
@@ -43,6 +55,7 @@ class PhotosViewController: UIViewController {
         setupViews()
         setupLayouts()
         populatePhotos()
+        setupGesture()
         collectionView.reloadData()
     }
     

@@ -188,10 +188,10 @@ class LogInViewController: UIViewController {
     }
     
     @objc private func transitionScreen(button: UINavigationItem) {
-         let vc = ProfileViewController()
-        //let secondText = SecondLogoTextField.text
+        let vc = ProfileViewController()
+        let secondText = SecondLogoTextField.text
         
-       /* if let firstText = FirstLogoTextField.text, firstText.isEmpty, let secondText = SecondLogoTextField.text, secondText.isEmpty {
+       if let firstText = FirstLogoTextField.text, firstText.isEmpty, let secondText = SecondLogoTextField.text, secondText.isEmpty {
             errorLabel.text = "Error: empty email and password fields"
             FirstLogoTextField.layer.borderColor = UIColor.red.cgColor
             SecondLogoTextField.layer.borderColor = UIColor.red.cgColor
@@ -226,7 +226,7 @@ class LogInViewController: UIViewController {
             Error: not vaild password. Try:
             Password123
             """
-        } else { */
+        } else {
             errorLabel.text = ""
             self.navigationController?.pushViewController(vc, animated: true)
             FirstLogoTextField.text = ""
@@ -235,7 +235,7 @@ class LogInViewController: UIViewController {
             SecondLogoTextField.layer.borderColor = UIColor.lightGray.cgColor
         }
      }
-//}
+}
 
 
 extension UIColor {

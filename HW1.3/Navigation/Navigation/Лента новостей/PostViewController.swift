@@ -7,8 +7,6 @@
 
 import UIKit
 
-//шестое задание
-
 class PostViewController: UIViewController {
 
     private var closure: (() -> Void)? 

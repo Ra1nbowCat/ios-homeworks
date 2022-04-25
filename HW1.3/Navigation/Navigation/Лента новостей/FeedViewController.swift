@@ -13,7 +13,7 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
         self.navigationController?.navigationBar.isTranslucent = false
-        title = "Лента новостей"
+        title = "Feed"
         self.navigationController?.navigationBar.prefersLargeTitles = false
         
         self.view.addSubview(buttonStackView)
@@ -21,7 +21,7 @@ class FeedViewController: UIViewController {
         buttonStackView.addArrangedSubview(secondTransitionButton)
         addConstraintsToStackView()
         
-        navigationItem.backButtonTitle = "Назад"
+        navigationItem.backButtonTitle = "back"
     
     }
     

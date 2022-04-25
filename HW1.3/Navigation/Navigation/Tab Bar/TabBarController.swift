@@ -37,13 +37,13 @@ class TabBarController: UITabBarController {
             appearance.setTitleTextAttributes(attributes, for: .normal)
             
             firstNavigationController.tabBarItem.image = UIImage(systemName: "n.circle")
-            firstNavigationController.tabBarItem.title = "Лента новостей"
+            firstNavigationController.tabBarItem.title = "Feed"
             
             secondNavigationController.tabBarItem.image = UIImage(systemName: "list.dash")
-            secondNavigationController.tabBarItem.title = "Профиль"
+            secondNavigationController.tabBarItem.title = "Profile"
             
             thirdNavigationController.tabBarItem.image = UIImage(systemName: "scribble")
-            thirdNavigationController.tabBarItem.title = "Анимация"
+            thirdNavigationController.tabBarItem.title = "Animation"
         }
 
     }

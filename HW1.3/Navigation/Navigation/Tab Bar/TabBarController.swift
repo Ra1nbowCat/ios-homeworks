@@ -22,7 +22,8 @@ class TabBarController: UITabBarController {
             let thirdNavigationController = UINavigationController(rootViewController: thirdViewController)
             
             
-            viewControllers = [firstNavigationController, secondNavigationController, thirdNavigationController]
+            viewControllers = [firstNavigationController, secondNavigationController]
+                               //thirdNavigationController]
             
             // Четвертый пункт
             self.tabBar.tintColor = UIColor.systemBlue

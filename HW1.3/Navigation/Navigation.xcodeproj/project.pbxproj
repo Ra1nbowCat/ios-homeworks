@@ -13,7 +13,6 @@
 		001BDCD627C2720400502454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCD527C2720400502454 /* ViewController.swift */; };
 		001BDCDB27C2720400502454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCDA27C2720400502454 /* Assets.xcassets */; };
 		001BDCDE27C2720400502454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCDC27C2720400502454 /* LaunchScreen.storyboard */; };
-		001BDCE827C278F200502454 /* mario_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 001BDCE727C278F200502454 /* mario_logo.png */; };
 		001BDCEC27C279FE00502454 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCEB27C279FE00502454 /* FeedViewController.swift */; };
 		001BDCEE27C27A2800502454 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001BDCED27C27A2800502454 /* ProfileViewController.swift */; };
 		003C186727F18B5B005FD7D9 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003C186627F18B5B005FD7D9 /* PhotoCollectionViewCell.swift */; };
@@ -39,7 +38,6 @@
 		001BDCDA27C2720400502454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001BDCDD27C2720400502454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001BDCDF27C2720400502454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		001BDCE727C278F200502454 /* mario_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mario_logo.png; sourceTree = "<group>"; };
 		001BDCEB27C279FE00502454 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		001BDCED27C27A2800502454 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		003C186627F18B5B005FD7D9 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				0014D0BC27D5D2D100886B58 /* Профиль */,
 				001BDCDC27C2720400502454 /* LaunchScreen.storyboard */,
 				001BDCDF27C2720400502454 /* Info.plist */,
-				001BDCE727C278F200502454 /* mario_logo.png */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001BDCE827C278F200502454 /* mario_logo.png in Resources */,
 				001BDCDE27C2720400502454 /* LaunchScreen.storyboard in Resources */,
 				001BDCDB27C2720400502454 /* Assets.xcassets in Resources */,
 			);

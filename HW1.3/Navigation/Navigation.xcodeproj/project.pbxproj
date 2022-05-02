@@ -73,18 +73,18 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
-		0014D0BB27D5D2A300886B58 /* Лента новостей */ = {
+		0014D0BB27D5D2A300886B58 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				001BDCEB27C279FE00502454 /* FeedViewController.swift */,
 				00553C2A27C383B300C1D9EC /* InfoViewController.swift */,
 				00708B2F27C28E75007AD3B5 /* PostViewController.swift */,
 			);
-			name = "Лента новостей";
+			name = Feed;
 			path = "Лента новостей";
 			sourceTree = "<group>";
 		};
-		0014D0BC27D5D2D100886B58 /* Профиль */ = {
+		0014D0BC27D5D2D100886B58 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				001BDCED27C27A2800502454 /* ProfileViewController.swift */,
@@ -93,7 +93,7 @@
 				003C186527F18AF6005FD7D9 /* Post */,
 				003C186427F18AE2005FD7D9 /* Photo */,
 			);
-			path = "Профиль";
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		001BDCC527C2720400502454 = {
@@ -120,9 +120,9 @@
 				001BDCD527C2720400502454 /* ViewController.swift */,
 				001BDCDA27C2720400502454 /* Assets.xcassets */,
 				0014D0BA27D5D23300886B58 /* Tab Bar */,
-				0014D0BB27D5D2A300886B58 /* Лента новостей */,
+				0014D0BB27D5D2A300886B58 /* Feed */,
 				007FAACB27F6D0E900510251 /* Animation */,
-				0014D0BC27D5D2D100886B58 /* Профиль */,
+				0014D0BC27D5D2D100886B58 /* Profile */,
 				001BDCDC27C2720400502454 /* LaunchScreen.storyboard */,
 				001BDCDF27C2720400502454 /* Info.plist */,
 			);
